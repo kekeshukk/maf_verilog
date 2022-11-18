@@ -1,0 +1,330 @@
+# Reading D:/Program Files/altera/theversion/modelsim_ase/tcl/vsim/pref.tcl 
+# ERROR: No extended dataflow license exists
+# do MAP_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying D:\Program Files\altera\theversion\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied D:\Program Files\altera\theversion\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/Administrator/Desktop/multiple\ and\ send-backup/multiple\ and\ plus {C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Tr_Tw_CSA_chip.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Tr_Tw_CSA_chip
+# 
+# Top level modules:
+# 	Tr_Tw_CSA_chip
+# vlog -vlog01compat -work work +incdir+C:/Users/Administrator/Desktop/multiple\ and\ send-backup/multiple\ and\ plus {C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/T4_CSA_file.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module T4_CSA_file
+# 
+# Top level modules:
+# 	T4_CSA_file
+# vlog -vlog01compat -work work +incdir+C:/Users/Administrator/Desktop/multiple\ and\ send-backup/multiple\ and\ plus {C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/F_t_file.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module F_t_file
+# 
+# Top level modules:
+# 	F_t_file
+# vlog -vlog01compat -work work +incdir+C:/Users/Administrator/Desktop/multiple\ and\ send-backup/multiple\ and\ plus {C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/F_t_chip.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module F_t_chip
+# 
+# Top level modules:
+# 	F_t_chip
+# vlog -vlog01compat -work work +incdir+C:/Users/Administrator/Desktop/multiple\ and\ send-backup/multiple\ and\ plus {C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Con_shift.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Con_shift
+# 
+# Top level modules:
+# 	Con_shift
+# vlog -vlog01compat -work work +incdir+C:/Users/Administrator/Desktop/multiple\ and\ send-backup/multiple\ and\ plus {C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Adder.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Adder
+# 
+# Top level modules:
+# 	Adder
+# vlog -vlog01compat -work work +incdir+C:/Users/Administrator/Desktop/multiple\ and\ send-backup/multiple\ and\ plus {C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/MAP.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module MAP
+# 
+# Top level modules:
+# 	MAP
+# vlog -vlog01compat -work work +incdir+C:/Users/Administrator/Desktop/multiple\ and\ send-backup/multiple\ and\ plus {C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/conf.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# vlog -vlog01compat -work work +incdir+C:/Users/Administrator/Desktop/multiple\ and\ send-backup/multiple\ and\ plus {C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Tr_Tw_CSA_file.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Tr_Tw_CSA_file
+# 
+# Top level modules:
+# 	Tr_Tw_CSA_file
+# vlog -vlog01compat -work work +incdir+C:/Users/Administrator/Desktop/multiple\ and\ send-backup/multiple\ and\ plus {C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Get_operator.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Get_operator
+# 
+# Top level modules:
+# 	Get_operator
+# vlog -vlog01compat -work work +incdir+C:/Users/Administrator/Desktop/multiple\ and\ send-backup/multiple\ and\ plus {C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Select_operator.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Select_operator
+# 
+# Top level modules:
+# 	Select_operator
+# vlog -vlog01compat -work work +incdir+C:/Users/Administrator/Desktop/multiple\ and\ send-backup/multiple\ and\ plus {C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Precode.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Precode
+# 
+# Top level modules:
+# 	Precode
+# vlog -vlog01compat -work work +incdir+C:/Users/Administrator/Desktop/multiple\ and\ send-backup/multiple\ and\ plus {C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/First_one.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module First_one
+# 
+# Top level modules:
+# 	First_one
+# vlog -vlog01compat -work work +incdir+C:/Users/Administrator/Desktop/multiple\ and\ send-backup/multiple\ and\ plus {C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/First_one_2.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module First_one_2
+# 
+# Top level modules:
+# 	First_one_2
+# vlog -vlog01compat -work work +incdir+C:/Users/Administrator/Desktop/multiple\ and\ send-backup/multiple\ and\ plus {C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/First_one_4.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module First_one_4
+# 
+# Top level modules:
+# 	First_one_4
+# vlog -vlog01compat -work work +incdir+C:/Users/Administrator/Desktop/multiple\ and\ send-backup/multiple\ and\ plus {C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/First_one_8.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module First_one_8
+# 
+# Top level modules:
+# 	First_one_8
+# vlog -vlog01compat -work work +incdir+C:/Users/Administrator/Desktop/multiple\ and\ send-backup/multiple\ and\ plus {C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/First_one_16.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module First_one_16
+# 
+# Top level modules:
+# 	First_one_16
+# vlog -vlog01compat -work work +incdir+C:/Users/Administrator/Desktop/multiple\ and\ send-backup/multiple\ and\ plus {C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/First_one_32.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module First_one_32
+# 
+# Top level modules:
+# 	First_one_32
+# vlog -vlog01compat -work work +incdir+C:/Users/Administrator/Desktop/multiple\ and\ send-backup/multiple\ and\ plus {C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/CAL.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module CAL
+# 
+# Top level modules:
+# 	CAL
+# vlog -vlog01compat -work work +incdir+C:/Users/Administrator/Desktop/multiple\ and\ send-backup/multiple\ and\ plus {C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Abso.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Abso
+# 
+# Top level modules:
+# 	Abso
+# vlog -vlog01compat -work work +incdir+C:/Users/Administrator/Desktop/multiple\ and\ send-backup/multiple\ and\ plus {C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Vari_shift.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Vari_shift
+# 
+# Top level modules:
+# 	Vari_shift
+# vlog -vlog01compat -work work +incdir+C:/Users/Administrator/Desktop/multiple\ and\ send-backup/multiple\ and\ plus {C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Wallace_L4_L5.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Wallace_L4_L5
+# 
+# Top level modules:
+# 	Wallace_L4_L5
+# vlog -vlog01compat -work work +incdir+C:/Users/Administrator/Desktop/multiple\ and\ send-backup/multiple\ and\ plus {C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/LeadingZeroAnt_2.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module LeadingZeroAnt_2
+# 
+# Top level modules:
+# 	LeadingZeroAnt_2
+# vlog -vlog01compat -work work +incdir+C:/Users/Administrator/Desktop/multiple\ and\ send-backup/multiple\ and\ plus {C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/LeadingZeroAnt_3.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module LeadingZeroAnt_3
+# 
+# Top level modules:
+# 	LeadingZeroAnt_3
+# vlog -vlog01compat -work work +incdir+C:/Users/Administrator/Desktop/multiple\ and\ send-backup/multiple\ and\ plus {C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/T4_1_addit.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module T4_1_addit
+# 
+# Top level modules:
+# 	T4_1_addit
+# vlog -vlog01compat -work work +incdir+C:/Users/Administrator/Desktop/multiple\ and\ send-backup/multiple\ and\ plus {C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/wallace_l3.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Wallace_L3
+# 
+# Top level modules:
+# 	Wallace_L3
+# vlog -vlog01compat -work work +incdir+C:/Users/Administrator/Desktop/multiple\ and\ send-backup/multiple\ and\ plus {C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/leadingzeroant_1.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module LeadingZeroAnt_1
+# 
+# Top level modules:
+# 	LeadingZeroAnt_1
+# vlog -vlog01compat -work work +incdir+C:/Users/Administrator/Desktop/multiple\ and\ send-backup/multiple\ and\ plus {C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/revising_1.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Revising_1
+# 
+# Top level modules:
+# 	Revising_1
+# vlog -vlog01compat -work work +incdir+C:/Users/Administrator/Desktop/multiple\ and\ send-backup/multiple\ and\ plus {C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Pretreatment.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Pretreatment
+# 
+# Top level modules:
+# 	Pretreatment
+# vlog -vlog01compat -work work +incdir+C:/Users/Administrator/Desktop/multiple\ and\ send-backup/multiple\ and\ plus {C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Multiple.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Multiple
+# 
+# Top level modules:
+# 	Multiple
+# vlog -vlog01compat -work work +incdir+C:/Users/Administrator/Desktop/multiple\ and\ send-backup/multiple\ and\ plus {C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Reverse.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Reverse
+# 
+# Top level modules:
+# 	Reverse
+# vlog -vlog01compat -work work +incdir+C:/Users/Administrator/Desktop/multiple\ and\ send-backup/multiple\ and\ plus {C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Shifg_reg.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Shift_reg
+# 
+# Top level modules:
+# 	Shift_reg
+# vlog -vlog01compat -work work +incdir+C:/Users/Administrator/Desktop/multiple\ and\ send-backup/multiple\ and\ plus {C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Shifting.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Shifting
+# 
+# Top level modules:
+# 	Shifting
+# vlog -vlog01compat -work work +incdir+C:/Users/Administrator/Desktop/multiple\ and\ send-backup/multiple\ and\ plus {C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/ASC.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module ASC
+# 
+# Top level modules:
+# 	ASC
+# vlog -vlog01compat -work work +incdir+C:/Users/Administrator/Desktop/multiple\ and\ send-backup/multiple\ and\ plus {C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/MaF.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module MaF
+# 
+# Top level modules:
+# 	MaF
+# vlog -vlog01compat -work work +incdir+C:/Users/Administrator/Desktop/multiple\ and\ send-backup/multiple\ and\ plus {C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/T3_1_reg.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module T3_1_reg
+# 
+# Top level modules:
+# 	T3_1_reg
+# vlog -vlog01compat -work work +incdir+C:/Users/Administrator/Desktop/multiple\ and\ send-backup/multiple\ and\ plus {C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/T4_2_reg.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module T4_2_reg
+# 
+# Top level modules:
+# 	T4_2_reg
+# vlog -vlog01compat -work work +incdir+C:/Users/Administrator/Desktop/multiple\ and\ send-backup/multiple\ and\ plus {C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/T4_3_reg.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module T4_3_reg
+# 
+# Top level modules:
+# 	T4_3_reg
+# vlog -vlog01compat -work work +incdir+C:/Users/Administrator/Desktop/multiple\ and\ send-backup/multiple\ and\ plus {C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Pre_calculation.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Pre_calculation
+# 
+# Top level modules:
+# 	Pre_calculation
+# vlog -vlog01compat -work work +incdir+C:/Users/Administrator/Desktop/multiple\ and\ send-backup/multiple\ and\ plus {C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/t2_reg.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module T2_reg
+# ** Warning: C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/t2_reg.v(59): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# 
+# 
+# Top level modules:
+# 	T2_reg
+# vlog -vlog01compat -work work +incdir+C:/Users/Administrator/Desktop/multiple\ and\ send-backup/multiple\ and\ plus {C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/t3_2_reg.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module T3_2_reg
+# 
+# Top level modules:
+# 	T3_2_reg
+# vlog -vlog01compat -work work +incdir+C:/Users/Administrator/Desktop/multiple\ and\ send-backup/multiple\ and\ plus {C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/t4_1_reg.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module T4_1_reg
+# 
+# Top level modules:
+# 	T4_1_reg
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/Administrator/Desktop/multiple\ and\ send-backup/multiple\ and\ plus/simulation/modelsim {C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/simulation/modelsim/MAP_Top.vt}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module MAP_Top
+# 
+# Top level modules:
+# 	MAP_Top
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneiv_hssi_ver -L cycloneiv_pcie_hip_ver -L cycloneiv_ver -L rtl_work -L work -voptargs="+acc"  MAP_Top
+# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneiv_hssi_ver -L cycloneiv_pcie_hip_ver -L cycloneiv_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps MAP_Top 
+# Loading work.MAP_Top
+# Loading work.MAP
+# Loading work.Pretreatment
+# Loading work.ASC
+# Loading work.Shift_reg
+# Loading work.Multiple
+# Loading work.T2_reg
+# Loading work.Shifting
+# Loading work.Reverse
+# Loading work.Wallace_L3
+# Loading work.T3_1_reg
+# Loading work.Wallace_L4_L5
+# Loading work.Tr_Tw_CSA_file
+# Loading work.F_t_file
+# Loading work.F_t_chip
+# Loading work.T3_2_reg
+# Loading work.T4_CSA_file
+# Loading work.LeadingZeroAnt_1
+# Loading work.Get_operator
+# Loading work.Select_operator
+# Loading work.Precode
+# Loading work.T4_1_addit
+# Loading work.T4_1_reg
+# Loading work.LeadingZeroAnt_2
+# Loading work.Revising_1
+# Loading work.First_one
+# Loading work.First_one_32
+# Loading work.Adder
+# Loading work.CAL
+# Loading work.T4_2_reg
+# Loading work.LeadingZeroAnt_3
+# Loading work.Abso
+# Loading work.T4_3_reg
+# Loading work.Pre_calculation
+# Loading work.Con_shift
+# Loading work.Vari_shift
+# Loading work.MaF
+# Loading work.Tr_Tw_CSA_chip
+# Loading work.First_one_2
+# Loading work.First_one_4
+# Loading work.First_one_8
+# Loading work.First_one_16
+# ** Warning: (vsim-3015) C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/MAP.v(294): [PCDPC] - Port size (1 or 1) does not match connection size (3) for port 'cont'. The port definition is at: C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/t2_reg.v(6).
+# 
+#         Region: /MAP_Top/map/t2_reg
+# ** Warning: (vsim-3015) C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/MAP.v(294): [PCDPC] - Port size (1 or 1) does not match connection size (12) for port 'd_lin'. The port definition is at: C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/t2_reg.v(13).
+# 
+#         Region: /MAP_Top/map/t2_reg
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# ** Note: $finish    : C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/simulation/modelsim/MAP_Top.vt(86)
+#    Time: 0 ps  Iteration: 0  Instance: /MAP_Top

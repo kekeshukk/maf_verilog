@@ -1,0 +1,15 @@
+module ASC(
+	input 									clk,
+	input										rstn,
+	input										cont,
+	input				[7:0]					E_A,
+	input				[7:0]					E_B,
+	input				[7:0]					E_C,
+	input				[4:0]					E_A_H,
+	input				[4:0]					E_B_H,
+	input				[4:0]					E_C_H,
+	output	wire	[11:0]				sh_num	
+);
+	assign	sh_num = cont == 3'b001 ? ((E_A_H + E_B_H - E_C_H - 1'b1) << 6 + E_B +E_A + E_C -1'b1) : 
+								cont == 3'b000 ? E_A+E_B+E_C-7'd100 :	cont == 3'b010 E_A + E_B - E_C + 7'd124 : 12'b0;
+endmodule

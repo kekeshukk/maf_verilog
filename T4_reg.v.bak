@@ -1,0 +1,14 @@
+module T4_reg(
+	input										clk,
+	input										rstn,
+	input			[1:0]						revising,
+	input			[]
+);
+	always@(posedge clk or negedge rstn)begin
+		if(!rstn)begin
+			
+		end else begin
+		
+		end
+	end
+endmodule

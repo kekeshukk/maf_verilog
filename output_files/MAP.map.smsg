@@ -1,0 +1,8 @@
+Warning (10268): Verilog HDL information at Multiple.v(30): always construct contains both blocking and non-blocking assignments
+Info (10281): Verilog HDL Declaration information at F_t_file.v(7): object "Carry" differs only in case from object "carry" in the same scope
+Warning (10273): Verilog HDL warning at First_one_8.v(10): extended using "x" or "z"
+Warning (10273): Verilog HDL warning at First_one_16.v(10): extended using "x" or "z"
+Warning (10273): Verilog HDL warning at First_one_32.v(10): extended using "x" or "z"
+Info (10281): Verilog HDL Declaration information at Abso.v(6): object "S_A" differs only in case from object "s_a" in the same scope
+Info (10281): Verilog HDL Declaration information at Abso.v(9): object "S_A_H" differs only in case from object "s_a_h" in the same scope
+Warning (10273): Verilog HDL warning at LeadingZeroAnt_2.v(69): extended using "x" or "z"

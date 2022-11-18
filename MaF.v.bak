@@ -1,0 +1,11 @@
+module MaF(
+	input										clk,
+	input										rstn,
+	input			[2:0]						cont,
+	input			[23:0]					M_in,
+	input										s2_T4,
+	output	reg[31:0]					result,
+	input										s2h_T4
+);
+	
+endmodule

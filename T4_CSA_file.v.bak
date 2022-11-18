@@ -1,0 +1,28 @@
+//第4级流水线的结果
+module		T4_CSA_file(
+	input			[47:0]				in1,
+	input			[47:0]				in2,//要加1修正
+	input			[47:0]				in3,
+	output	   [47:0]				Carry,
+	output		[47:0]				Sum
+);
+	wire			[47:0]				temp;
+	wire			[47:0]				c_temp;
+	assign			temp			=			in2 + 1'b1;
+	assign			Carry[0]    =        'b0;
+	assign			Carry[47:1] =        c_temp[46:0]
+	parameter	PSIZE = 48;//乘积尾数的size
+	genvar i;
+	generate
+		for(i = 0; i < PSIZE; i= i+ 1)begin：csa_0
+			Tr_Tw_CSA_chip(
+			.x									(in1[i]),
+			.y									(temp[i]),
+			.z									(in3[i]),
+			.s									(Sum),
+			.c									(c_temp)
+			)
+		end
+	endgenerate
+
+endmodule;

@@ -1,0 +1,15 @@
+`include	"conf.v"
+module T2_Multi_reg(
+	input				[575:0]				M_out_plain_in,
+	input										clk,
+	input										rstn,
+	output	reg	[575:0]				M_out_plain_out
+);
+	always@(posedge clk or negedge rstn)begin
+		if(!rstn)begin
+			M_out_plain_out <= #`PERIOD	576'b0;
+		end else begin
+			M_out_plain_out <= #`PERIOD   M_out_plain_in;
+		end
+	end
+endmodule

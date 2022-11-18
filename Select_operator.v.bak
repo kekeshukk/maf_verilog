@@ -1,0 +1,10 @@
+module Select_operator( 
+	input										num_p_0,
+	input										num_p_1,
+	input										num_n_0,
+	input										num_n_1,
+	input										d,//阶差
+	output									op_0,
+	output									op_1
+);
+endmodule

@@ -1,0 +1,16 @@
+module Shifting(
+	input										clk,
+	input										rstn,
+	input					[75:0]			sh_in_reg,
+	input										cont,
+	output	reg		[75:0]			sh_out_reg
+);
+	always @(posedge clk or negedge rstn)begin
+		if(!rstn)begin
+			sh_out_reg				<=				76'b0;
+		end
+		else if(cont == 3'b000) begin
+			sh_out_reg				<=				{}
+		end
+	end
+endmodule

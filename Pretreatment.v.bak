@@ -1,0 +1,159 @@
+module preTreatment(
+	input						clk,//全局时钟信号
+	input						rstn,//全局复位
+	input			[31:0]	A,
+	input			[31:0]	B,
+	input			[31:0]	C,
+	/*
+		输入的控制信号：
+		000 代表单精度、单精度、单精度
+		001 代表并行两个半精度										待添加*******
+		010 代表半精度、半精度、单精度
+	*/
+	input			[2:0]		cont,
+	//尾数
+	output		[22:0]	M_A,
+	output		[22:0]	M_B,
+	output		[22:0]	M_C,
+	/*
+	异常：
+	规定 
+		000 ：无异常
+		001 - 006 ： 论文中的异常 
+	*/
+	output reg	[3:0]		trap,
+	//阶码
+	output		[7:0]		E_A,
+	output		[7:0]		E_B,
+	output		[7:0]		E_C,
+	//符号
+	output					S_A,
+	output					S_B,
+	output					S_C,
+	output reg	[2:0]	   con_state//内部控制信号
+);
+wire		[2:0]  	NaN;//判断是不是非数
+wire		[2:0]		Infi;//判断无穷
+wire		[2:0]		Zeros;//判断是不是0
+wire					Msignal;//乘积符号
+/*
+	这表示异常的情况下的输出结果
+	第一位：符号位
+	第二位：是不是NaN
+	第三位：是不是Infi
+*/
+reg		[2:0]		trap_ans;
+/*
+	数字各位的分离工作							待添加***
+*/
+assign	M_A 		= 		(cont == 3'b000) ? A[22:0] : (cont == 3'b001) ? A[9:0] : A[9:0];
+assign	M_B 		= 		(cont == 3'b000) ? B[22:0] : (cont == 3'b001) ? B[9:0] : B[9:0];
+assign	M_C 		= 		(cont == 3'b000) ? C[22:0] : (cont == 3'b001) ? C[9:0] : C[9:0];
+assign	E_A 		= 		(cont == 3'b000) ? A[30:23] : (cont == 3'b001) ? A[14:10] : A[14:10];
+assign	E_B		= 		(cont == 3'b000) ? B[30:23] : (cont == 3'b001) ? B[14:10] : B[14:10];
+assign	E_C 		= 		(cont == 3'b000) ? C[30:23] : (cont == 3'b001) ? C[14:10] : C[14:10];
+assign	S_A 		=		(cont == 3'b000) ? A[31] : (cont == 3'b001) ? A[15] : A[15];
+assign	S_B 		=		(cont == 3'b000) ? B[31] : (cont == 3'b001) ? B[15] : B[15];
+assign	S_C		= 		(cont == 3'b000) ? C[31] : (cont == 3'b001) ? C[15] : C[15];
+assign	Msignal	=		((!S_A && S_B) || (!S_B &&  S_A));//用异或并，计算乘积的符号位
+/*
+判断是不是非数
+*/
+assign   NaN[0] 	=		((M_C!= 23'b0 && E_C == 8'd127) ? 1 : 0;
+assign   NaN[1] 	= 		(M_B != 23'b0 && E_B == 8'd127) ? 1 : 0;
+assign   NaN[2]	= 		(M_A!= 23'b0 && E_A == 8'd127) ? 1 : 0;
+//判断
+assign	Infi[0] 	= 		(M_C == 23'b0 && E_C == 8'd127) ? 1 : 0;
+assign	Infi[1] 	= 		(M_B == 23'b0 && E_C == 8'd127) ? 1 : 0;
+assign   Infi[2] 	= 		(M_A == 23'b0 && E_A == 8'd127) ? 1:0;
+//判0,Z这里我认为即使是下溢，即非规约数中的E = 0,M!=0,要认为是机器0
+assign	Zeros[0]	=		(E_C == 8'b0) ? 1 : 0;
+assign	Zeros[1]	=		(E_B == 8'b0) ? 1 : 0;
+assign	Zeros[2]	=		(E_A == 8'b0) ? 1 : 0;
+always @(posedge clk or negedge rstn)begin
+	if(!rstn) begin
+		trap				<= 4'b0;
+		con_state		<= 3'b0;
+	end
+	else begin//异常
+		con_state <= cont;//										待添加******
+		trap 		<=	4'b0;
+		trap_ans	<= 3'b0;
+		if(NaN != 3'b0)begin
+			trap_ans[1] <= 1'b1;
+			trap 			<= 4'd1;
+		end
+		if(((Infi == 3'b101) && (Zeros == 3'b010)) || ((Infi == 3'b110) && (Zeros == 3'b001)))begin
+			trap_ans[0] <= Msignal;
+			trap[3:0] 	<= 4'd1;
+			trap_ans[2]	<= 1'b1;
+		end
+		
+		if((Infi[0] == 1'b0) && (((Zeros[2] != 1'b0) && (Infi[1] == 1'b1)) or ((Zeros[1] != 1'b0) && (Infi[2] == 1'b1))))begin
+			if(Msignal == S_C)begin
+				trap_ans[0] <= Msignal	;
+				trap_ans[2]	<= 1'b1;
+				trap 			<= 4'd3;
+			end
+			else	begin
+				trap_ans[1] <= 1'b1;
+				trap        <= 4'd4;
+			end
+		if(((Infi[1] == 1'b1) && (Zeros[0] == 1'b1)) || (Infi[2] == 1'b1) && (Zeros[1] == 1'b1))begin
+			trap_ans[1] <= 'b1;
+			trap			<= 4'd5;
+		end
+		if((NaN == 3'b0) && (Infi == 3'b100) && Zeros == 3'b0)begin
+			trap_ans[0] <= S_C;
+			trap_ans[2] <= 'b1;
+			trap			<= 4'd6;
+		end
+end
+endmodule
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

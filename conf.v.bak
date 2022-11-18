@@ -1,0 +1,3 @@
+·define										20
+`define			SIZE						5'd24
+`define			HSIZE						5'd11

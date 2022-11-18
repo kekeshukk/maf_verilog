@@ -1,0 +1,887 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\Administrator\Desktop\multiple and send-backup\multiple and plus\simulation\modelsim
+vAbso
+IVW?FFDHDo[[3WA4zdz;=E0
+VUC[`Wz9LSkjUcMNA2UZjH2
+Z1 dC:\Users\Administrator\Desktop\multiple and send-backup\multiple and plus\simulation\modelsim
+w1615948504
+8C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Abso.v
+FC:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Abso.v
+L0 3
+Z2 OV;L;10.1d;51
+r1
+31
+Z3 o-vlog01compat -work work -O0
+Z4 !s92 -vlog01compat -work work {+incdir+C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus} -O0
+n@abso
+!i10b 1
+!s100 ]5jL:0dJ]W;M2H?0kdLoW3
+!s85 0
+!s108 1616409938.166000
+!s107 C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Abso.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus|C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Abso.v|
+!s101 -O0
+vAdder
+Ic@BJSCA1m=;EjKn_5G=IX3
+V^H=`R3mUCZKoVEdDQ;^?41
+R1
+w1615962290
+8C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Adder.v
+FC:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Adder.v
+L0 2
+R2
+r1
+31
+R3
+R4
+n@adder
+!i10b 1
+!s100 9TGb[NKm?zgTVDHHbS`;R2
+!s85 0
+!s108 1616409933.252000
+!s107 C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Adder.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus|C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Adder.v|
+!s101 -O0
+vASC
+IVdOJ`Ufo>Nh1gYF]CJ1kK0
+Vd?J8e^G4hlaI28ZM;RTYK0
+R1
+w1616205460
+8C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/ASC.v
+FC:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/ASC.v
+L0 2
+R2
+r1
+31
+R3
+R4
+n@a@s@c
+!i10b 1
+!s100 ]zK7@bcbGG^_]ahO;6P^80
+!s85 0
+!s108 1616409942.643000
+!s107 C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/conf.v|C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/ASC.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus|C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/ASC.v|
+!s101 -O0
+vCAL
+IcX>JTXha4C=>jDP0V8S9n3
+Vj<h^Yh4O5<VKdlG=]W7Ob1
+R1
+w1616298064
+8C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/CAL.v
+FC:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/CAL.v
+L0 2
+R2
+r1
+31
+R3
+R4
+n@c@a@l
+!i10b 1
+!s100 ?NMZZQ@N31a3RA4Y9^iYK3
+!s85 0
+!s108 1616409937.988000
+!s107 C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/CAL.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus|C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/CAL.v|
+!s101 -O0
+vCon_shift
+I3bWnBGihOfVBh12l31dk>2
+V6`=`?FOn5_UiPI3zJAo7z3
+R1
+w1616309570
+8C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Con_shift.v
+FC:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Con_shift.v
+L0 1
+R2
+r1
+31
+R3
+R4
+n@con_shift
+!i10b 1
+!s100 N<K>DImAFmUz1=l2M0FfE1
+!s85 0
+!s108 1616409932.510000
+!s107 C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Con_shift.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus|C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Con_shift.v|
+!s101 -O0
+vF_t_chip
+I0=SZ<kTSkOUO9b93^=[990
+V@4hP4eigndPMU5eP3QVNR1
+R1
+w1615951167
+8C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/F_t_chip.v
+FC:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/F_t_chip.v
+L0 2
+R2
+r1
+31
+R3
+R4
+n@f_t_chip
+!i10b 1
+!s100 38k>Bb`R23i;2k1KiMg1h3
+!s85 0
+!s108 1616409932.367000
+!s107 C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/F_t_chip.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus|C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/F_t_chip.v|
+!s101 -O0
+vF_t_file
+I>R:G?Q9:Rc]XX@@ZMDKH^2
+V^S5KBZ`LW1bSkleiXk2A]2
+R1
+w1611928728
+8C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/F_t_file.v
+FC:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/F_t_file.v
+L0 2
+R2
+r1
+31
+R3
+R4
+n@f_t_file
+!i10b 1
+!s100 do@__eMM>WUOTk`RkHJ9l2
+!s85 0
+!s108 1616409932.244000
+!s107 C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/F_t_file.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus|C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/F_t_file.v|
+!s101 -O0
+vFirst_one
+IULOiLQRWnkCXLHQHe;_G22
+V69ohAZm>@5f?257LFFo4N1
+R1
+w1613827957
+8C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/First_one.v
+FC:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/First_one.v
+L0 1
+R2
+r1
+31
+R3
+R4
+n@first_one
+!i10b 1
+!s100 knGTAL1gHT_E=3i3gZmEO1
+!s85 0
+!s108 1616409934.893000
+!s107 C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/First_one.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus|C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/First_one.v|
+!s101 -O0
+vFirst_one_16
+IT8Y?IK>FPM^VzG25Gj1X22
+VzR5TP=cC7=621k:Mg8XXY2
+R1
+w1613012058
+8C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/First_one_16.v
+FC:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/First_one_16.v
+L0 1
+R2
+r1
+31
+R3
+R4
+n@first_one_16
+!i10b 1
+!s100 bDiCMZ0lPjKb;<8oXkb]G2
+!s85 0
+!s108 1616409937.525000
+!s107 C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/First_one_16.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus|C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/First_one_16.v|
+!s101 -O0
+vFirst_one_2
+IW19FBVE^hc?Bd>zb:A@Qc1
+VYhXcZlol[nn89D1GXD5mh1
+R1
+w1613804671
+8C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/First_one_2.v
+FC:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/First_one_2.v
+L0 1
+R2
+r1
+31
+R3
+R4
+n@first_one_2
+!i10b 1
+!s100 a4gEL2kK=`2E;R3?2=`Ma2
+!s85 0
+!s108 1616409935.936000
+!s107 C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/First_one_2.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus|C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/First_one_2.v|
+!s101 -O0
+vFirst_one_32
+IGa:If^SDeOR?kKM^1LY@P0
+V^HgN5jEhUIFjgXDU:3UFQ3
+R1
+w1612883954
+8C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/First_one_32.v
+FC:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/First_one_32.v
+L0 1
+R2
+r1
+31
+R3
+R4
+n@first_one_32
+!i10b 1
+!s100 ^Zi0<_eWCd3lSP[@``ZH:3
+!s85 0
+!s108 1616409937.779000
+!s107 C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/First_one_32.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus|C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/First_one_32.v|
+!s101 -O0
+vFirst_one_4
+I^1A[U:2Q6T>[fnieb6J`a3
+VPFZAj:1]1R3]jd2Z]8HN:3
+R1
+w1615950826
+8C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/First_one_4.v
+FC:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/First_one_4.v
+L0 1
+R2
+r1
+31
+R3
+R4
+n@first_one_4
+!i10b 1
+!s100 j_UX<iA^K^>zR9jlGTD@V1
+!s85 0
+!s108 1616409936.397000
+!s107 C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/First_one_4.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus|C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/First_one_4.v|
+!s101 -O0
+vFirst_one_8
+IAHzlK^J9ih`FS]dQlI30l2
+V5zV42>zV]N@i>LUAa=eE^0
+R1
+w1613012149
+8C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/First_one_8.v
+FC:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/First_one_8.v
+L0 1
+R2
+r1
+31
+R3
+R4
+n@first_one_8
+!i10b 1
+!s100 F9BdJGFoHTd:0P0b2EMcK2
+!s85 0
+!s108 1616409936.827000
+!s107 C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/First_one_8.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus|C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/First_one_8.v|
+!s101 -O0
+vGet_operator
+Ik?o]jXgAS4Golo[527]D;0
+VZngmUVVkj<VKzCKc]jb:b2
+R1
+w1614218282
+8C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Get_operator.v
+FC:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Get_operator.v
+L0 2
+R2
+r1
+31
+R3
+R4
+n@get_operator
+!i10b 1
+!s100 =n2T^BcOiHn=kTiOdBb4b1
+!s85 0
+!s108 1616409933.965000
+!s107 C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Get_operator.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus|C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Get_operator.v|
+!s101 -O0
+vLeadingZeroAnt_1
+I9P707A?[K=NKURie_Ibj?0
+V?:R5T8?VLI3Onl>5@mjiM0
+R1
+w1616212706
+8C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/leadingzeroant_1.v
+FC:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/leadingzeroant_1.v
+L0 2
+R2
+r1
+31
+R3
+R4
+n@leading@zero@ant_1
+!i10b 1
+!s100 :gXn@;hPc_Gcj:zhZoBeg2
+!s85 0
+!s108 1616409939.503000
+!s107 C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/leadingzeroant_1.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus|C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/leadingzeroant_1.v|
+!s101 -O0
+vLeadingZeroAnt_2
+I<TH1chR0CK0B<;DDXkHCM0
+VzF2Jc[]EXB1@;z^@_DQW@1
+R1
+w1616287771
+8C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/LeadingZeroAnt_2.v
+FC:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/LeadingZeroAnt_2.v
+L0 2
+R2
+r1
+31
+R3
+R4
+n@leading@zero@ant_2
+!i10b 1
+!s100 A5R^ZzB:GgeMoT4zG9DPV1
+!s85 0
+!s108 1616409938.807000
+!s107 C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/LeadingZeroAnt_2.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus|C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/LeadingZeroAnt_2.v|
+!s101 -O0
+vLeadingZeroAnt_3
+IXAGD<78Q5FdF@j2K<cX:20
+Vo=IE6S8Y[K3oI4l<zialm2
+R1
+w1616287439
+8C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/LeadingZeroAnt_3.v
+FC:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/LeadingZeroAnt_3.v
+L0 2
+R2
+r1
+31
+R3
+R4
+n@leading@zero@ant_3
+!i10b 1
+!s100 fVSChg`Y5kL2fTzQfP?2R2
+!s85 0
+!s108 1616409938.995000
+!s107 C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/LeadingZeroAnt_3.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus|C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/LeadingZeroAnt_3.v|
+!s101 -O0
+vMaF
+IRQ?=6H=CGZA`==nU`Og7L3
+VJXXQ2V;3=G8o`JTCi3OXB1
+R1
+w1614309730
+8C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/MaF.v
+FC:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/MaF.v
+L0 2
+R2
+r1
+31
+R3
+R4
+n@ma@f
+!i10b 1
+!s100 f9YT8XMMi26Yl0VZPjTPJ3
+!s85 0
+!s108 1616409943.296000
+!s107 C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/conf.v|C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/MaF.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus|C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/MaF.v|
+!s101 -O0
+vMAP
+I]gdV:jQoIIP3if8<T:_>=3
+VU0`dILMMLZUhd>Kcgg6OJ2
+R1
+w1616408478
+8C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/MAP.v
+FC:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/MAP.v
+L0 1
+R2
+r1
+31
+R3
+R4
+n@m@a@p
+!i10b 1
+!s100 zO1_mehU3O>?mPA0:Gc040
+!s85 0
+!s108 1616409933.483000
+!s107 C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/MAP.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus|C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/MAP.v|
+!s101 -O0
+vMAP_Top
+!i10b 1
+!s100 D7][0BaOk>7G;:JO5nj3L3
+IRCeG?YHF]M5PCN@YXV7N>3
+V3S@hI1WeN>H6DJo4?LeMS3
+R1
+w1616312119
+8C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/simulation/modelsim/MAP_Top.vt
+FC:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/simulation/modelsim/MAP_Top.vt
+L0 30
+R2
+r1
+!s85 0
+31
+!s108 1616409945.387000
+!s107 C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/simulation/modelsim/MAP_Top.vt|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/simulation/modelsim|C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/simulation/modelsim/MAP_Top.vt|
+!s101 -O0
+R3
+!s92 -vlog01compat -work work {+incdir+C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/simulation/modelsim} -O0
+n@m@a@p_@top
+vMultiple
+I8de<m5l3]jLdK0ADh0eDK0
+V[KjHon_4_@X=AW]6g0RZV3
+R1
+w1616292766
+8C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Multiple.v
+FC:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Multiple.v
+L0 2
+R2
+r1
+31
+R3
+R4
+n@multiple
+!i10b 1
+!s100 1BQ8bT2YYNo7EEX6O;>Af2
+!s85 0
+!s108 1616409940.066000
+!s107 C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/conf.v|C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Multiple.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus|C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Multiple.v|
+!s101 -O0
+vPre_calculation
+IbGU>=CTd_>_Go2gCF?0bn2
+VfheFNzeo`Y>HzhNYKk04m2
+R1
+w1616408713
+8C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Pre_calculation.v
+FC:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Pre_calculation.v
+L0 3
+R2
+r1
+31
+R3
+R4
+n@pre_calculation
+!i10b 1
+!s100 iNk9:MB2Zk:UNUMRh`n8S0
+!s85 0
+!s108 1616409944.035000
+!s107 C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/conf.v|C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Pre_calculation.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus|C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Pre_calculation.v|
+!s101 -O0
+vPrecode
+I2BmbKa1774PmjGW9dE=j>0
+V7jQjPc0Dj2nL=SQ1Z2T:K3
+R1
+w1615951261
+8C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Precode.v
+FC:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Precode.v
+L0 1
+R2
+r1
+31
+R3
+R4
+n@precode
+!i10b 1
+!s100 8gcH7dSO1NMRAiUUdYBUc2
+!s85 0
+!s108 1616409934.345000
+!s107 C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Precode.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus|C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Precode.v|
+!s101 -O0
+vPretreatment
+I4OP]ccT;g9>8`<E_3?1660
+Vkfh0?m2;RCn=]92Bad@ak3
+R1
+w1616320413
+8C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Pretreatment.v
+FC:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Pretreatment.v
+L0 6
+R2
+r1
+31
+R3
+R4
+n@pretreatment
+!i10b 1
+!s100 gGRdQ@b1lzRb>ofmgcT?B2
+!s85 0
+!s108 1616409939.847000
+!s107 C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/conf.v|C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Pretreatment.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus|C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Pretreatment.v|
+!s101 -O0
+vReverse
+IR@OY^I_XWQ@<@3>SGFebU0
+V1`Q^PN8b0NT5XOLaB6B7L0
+R1
+w1613800426
+8C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Reverse.v
+FC:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Reverse.v
+L0 3
+R2
+r1
+31
+R3
+R4
+n@reverse
+!i10b 1
+!s100 MI1bUOCULXF@WeJQl4][10
+!s85 0
+!s108 1616409941.005000
+!s107 C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/conf.v|C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Reverse.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus|C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Reverse.v|
+!s101 -O0
+vRevising_1
+Ih61Io?hkIVLaGeH39B2S50
+VUeF7P5@Y1E03VbfbH=6KV1
+R1
+w1616287722
+8C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/revising_1.v
+FC:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/revising_1.v
+L0 2
+R2
+r1
+31
+R3
+R4
+n@revising_1
+!i10b 1
+!s100 4ao[D8^11W]RZ;3U>1`043
+!s85 0
+!s108 1616409939.680000
+!s107 C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/revising_1.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus|C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/revising_1.v|
+!s101 -O0
+vSelect_operator
+INYI5<dbzYNAP7S];:NK]I1
+VVfYY`SIdeT`5QWOo?oJ3f3
+R1
+w1612937581
+8C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Select_operator.v
+FC:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Select_operator.v
+L0 1
+R2
+r1
+31
+R3
+R4
+n@select_operator
+!i10b 1
+!s100 S?WAOVdA1^QoiMl1GYcP10
+!s85 0
+!s108 1616409934.142000
+!s107 C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Select_operator.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus|C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Select_operator.v|
+!s101 -O0
+vShift_reg
+IU87bY7`CXl2gJL8o;n2dZ0
+VE7VT[5EBfJl7A^`R_d=ac0
+R1
+w1616204035
+8C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Shifg_reg.v
+FC:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Shifg_reg.v
+L0 2
+R2
+r1
+31
+R3
+R4
+n@shift_reg
+!i10b 1
+!s100 JgZ93Jikacg1>J@3TO3ae1
+!s85 0
+!s108 1616409941.853000
+!s107 C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/conf.v|C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Shifg_reg.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus|C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Shifg_reg.v|
+!s101 -O0
+vShifting
+IIQ]kj<DjY=PW1fJYE09Nb0
+VGMi6[A3I^4[m[BOU2h:4D0
+R1
+w1616211135
+8C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Shifting.v
+FC:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Shifting.v
+L0 3
+R2
+r1
+31
+R3
+R4
+n@shifting
+!i10b 1
+!s100 >KI]>DBdgZhfo]]L0Tdz31
+!s85 0
+!s108 1616409942.023000
+!s107 C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/conf.v|C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Shifting.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus|C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Shifting.v|
+!s101 -O0
+vT2_reg
+ILUaef8QZG_gAWnKd7FI@31
+VZd?TZbc[QPdbI?2Y2oK1I3
+R1
+w1616292088
+8C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/t2_reg.v
+FC:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/t2_reg.v
+L0 2
+R2
+r1
+31
+R3
+R4
+n@t2_reg
+!i10b 1
+!s100 KTT57aV`fB0dI8=I5bYVH3
+!s85 0
+!s108 1616409944.225000
+!s107 C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/conf.v|C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/t2_reg.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus|C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/t2_reg.v|
+!s101 -O0
+vT3_1_reg
+Ih2KjU:T<]O8JH]A05S=z<2
+VR5j`NVOOU@78HlMN::_V53
+R1
+w1616291820
+8C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/T3_1_reg.v
+FC:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/T3_1_reg.v
+L0 2
+R2
+r1
+31
+R3
+R4
+n@t3_1_reg
+!i10b 1
+!s100 hC?V_M:09N8E:N7mCQ9]10
+!s85 0
+!s108 1616409943.495000
+!s107 C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/conf.v|C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/T3_1_reg.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus|C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/T3_1_reg.v|
+!s101 -O0
+vT3_2_reg
+I8Cn7[@cTc`L6`>ee3JWA20
+VD_O5OSYh1jCdSo?1WiXTD3
+R1
+w1616292007
+8C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/t3_2_reg.v
+FC:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/t3_2_reg.v
+L0 2
+R2
+r1
+31
+R3
+R4
+n@t3_2_reg
+!i10b 1
+!s100 _9OOR]_b]a_13>ZUo0BFA0
+!s85 0
+!s108 1616409944.413000
+!s107 C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/conf.v|C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/t3_2_reg.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus|C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/t3_2_reg.v|
+!s101 -O0
+vT4_1_addit
+I8K:HG=QJf;h;I^gUN=2`K0
+V4JfHe_ZcfgWP;^OdWlza@2
+R1
+w1616293552
+8C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/T4_1_addit.v
+FC:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/T4_1_addit.v
+L0 1
+R2
+r1
+31
+R3
+R4
+n@t4_1_addit
+!i10b 1
+!s100 CLKR2RF4a8YTib4MZ?B_f0
+!s85 0
+!s108 1616409939.183000
+!s107 C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/T4_1_addit.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus|C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/T4_1_addit.v|
+!s101 -O0
+vT4_1_reg
+I1B3n6chU@GN>Q`5[UTWVS2
+V14IlUiT5mI]D3>k4iih2n0
+R1
+w1616298221
+8C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/t4_1_reg.v
+FC:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/t4_1_reg.v
+L0 2
+R2
+r1
+31
+R3
+R4
+n@t4_1_reg
+!i10b 1
+!s100 Nazh;^UaNc[VAWcz^Ef322
+!s85 0
+!s108 1616409944.613000
+!s107 C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/conf.v|C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/t4_1_reg.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus|C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/t4_1_reg.v|
+!s101 -O0
+vT4_2_reg
+InnS<[miYaCNMhEO5hHPeQ3
+VGkN<V];@Vd?mSJ^`ZfFGM1
+R1
+w1616298164
+8C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/T4_2_reg.v
+FC:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/T4_2_reg.v
+L0 2
+R2
+r1
+31
+R3
+R4
+n@t4_2_reg
+!i10b 1
+!s100 YE32lG=V<Am965WKU^kZ?2
+!s85 0
+!s108 1616409943.674000
+!s107 C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/conf.v|C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/T4_2_reg.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus|C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/T4_2_reg.v|
+!s101 -O0
+vT4_3_reg
+IVY;2GD?`3PGZ<0SM@DMJP1
+Vi>Q9`S511cg1b@`_k0=[92
+R1
+w1616409299
+8C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/T4_3_reg.v
+FC:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/T4_3_reg.v
+L0 2
+R2
+r1
+31
+R3
+R4
+n@t4_3_reg
+!i10b 1
+!s100 0E6=[TYHoKE9mnjPE<g@32
+!s85 0
+!s108 1616409943.848000
+!s107 C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/conf.v|C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/T4_3_reg.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus|C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/T4_3_reg.v|
+!s101 -O0
+vT4_CSA_file
+I4Z;<IfaCME_[>z0mj[8[=0
+V>C>PM=UC4FbW3;0nJl9Jk2
+R1
+w1614219406
+8C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/T4_CSA_file.v
+FC:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/T4_CSA_file.v
+L0 3
+R2
+r1
+31
+R3
+R4
+n@t4_@c@s@a_file
+!i10b 1
+!s100 4`NeOff8FM^ELEC5E;@zE0
+!s85 0
+!s108 1616409932.090000
+!s107 C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/T4_CSA_file.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus|C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/T4_CSA_file.v|
+!s101 -O0
+vTr_Tw_CSA_chip
+I`?PGjYcDcK<=AV>[f;5<T2
+VhQbjWS0XTeNXcaKF=7D1k3
+R1
+w1612091764
+8C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Tr_Tw_CSA_chip.v
+FC:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Tr_Tw_CSA_chip.v
+L0 2
+R2
+r1
+31
+R3
+n@tr_@tw_@c@s@a_chip
+R4
+!i10b 1
+!s100 9CI:I1k0fA]1bYG;RL:=E0
+!s85 0
+!s108 1616409931.892000
+!s107 C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Tr_Tw_CSA_chip.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus|C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Tr_Tw_CSA_chip.v|
+!s101 -O0
+vTr_Tw_CSA_file
+If`Zl1JDjeAMZkcR?CO;m:0
+VY:R86]oSSgP1z1A7:VHdh3
+R1
+w1612082328
+8C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Tr_Tw_CSA_file.v
+FC:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Tr_Tw_CSA_file.v
+L0 2
+R2
+r1
+31
+R3
+R4
+n@tr_@tw_@c@s@a_file
+!i10b 1
+!s100 9^>TQDn_Rn;ab>an9DkV92
+!s85 0
+!s108 1616409933.789000
+!s107 C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Tr_Tw_CSA_file.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus|C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Tr_Tw_CSA_file.v|
+!s101 -O0
+vVari_shift
+IjW>0VnJAfi2X694LoOP`00
+V1gL4fO@gT76SDAL8GcjC_0
+R1
+w1614759348
+8C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Vari_shift.v
+FC:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Vari_shift.v
+L0 1
+R2
+r1
+31
+R3
+R4
+n@vari_shift
+!i10b 1
+!s100 kbbbD5lNK4lmd1>lP`;LT2
+!s85 0
+!s108 1616409938.331000
+!s107 C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Vari_shift.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus|C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Vari_shift.v|
+!s101 -O0
+vWallace_L3
+IYXd_7L==O`?c8BGdPW_l71
+V=h5neBnHLn:ldY^5IgL>Z3
+R1
+w1616211910
+8C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/wallace_l3.v
+FC:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/wallace_l3.v
+L0 1
+R2
+r1
+31
+R3
+R4
+n@wallace_@l3
+!i10b 1
+!s100 XLlU08l8m7Uk6gkDlm:5D0
+!s85 0
+!s108 1616409939.337000
+!s107 C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/wallace_l3.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus|C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/wallace_l3.v|
+!s101 -O0
+vWallace_L4_L5
+IkCKmdi9lSETmZ<kKRa>dh2
+V<EE_X[o]TRF=94LVL_zKE0
+R1
+w1615969389
+8C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Wallace_L4_L5.v
+FC:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Wallace_L4_L5.v
+L0 1
+R2
+r1
+31
+R3
+R4
+n@wallace_@l4_@l5
+!i10b 1
+!s100 zc_lhh9ODT8?SnkJN5a4j3
+!s85 0
+!s108 1616409938.597000
+!s107 C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Wallace_L4_L5.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus|C:/Users/Administrator/Desktop/multiple and send-backup/multiple and plus/Wallace_L4_L5.v|
+!s101 -O0

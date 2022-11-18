@@ -1,0 +1,12 @@
+//LZD中获得两类操作数的一个模块
+module Get_operator(
+	input			[23:0]					M_C_A, //加了两位附加的M_C
+	input			[47:0]					Sum,
+	input			[47:0]					Carry,
+	output		[55:0]					num_p_0,//d>0时的第一op
+	output		[55:0]					num_p_1,//d>0时的第二op
+	output		[55:0]					num_n_0,//d<=0时的第一op
+	output		[55:0]					num_n_1 //d<=0时第二op
+);
+	
+endmodule

@@ -1,0 +1,55 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vlog -vlog01compat -work work +incdir+E:/multiple\ and\ send/multiple\ and\ plus {E:/multiple and send/multiple and plus/Revising.v}
+vlog -vlog01compat -work work +incdir+E:/multiple\ and\ send/multiple\ and\ plus {E:/multiple and send/multiple and plus/MAP.v}
+vlog -vlog01compat -work work +incdir+E:/multiple\ and\ send/multiple\ and\ plus {E:/multiple and send/multiple and plus/Shifg_reg.v}
+vlog -vlog01compat -work work +incdir+E:/multiple\ and\ send/multiple\ and\ plus {E:/multiple and send/multiple and plus/ASC.v}
+vlog -vlog01compat -work work +incdir+E:/multiple\ and\ send/multiple\ and\ plus {E:/multiple and send/multiple and plus/conf.v}
+vlog -vlog01compat -work work +incdir+E:/multiple\ and\ send/multiple\ and\ plus {E:/multiple and send/multiple and plus/Wallace.v}
+vlog -vlog01compat -work work +incdir+E:/multiple\ and\ send/multiple\ and\ plus {E:/multiple and send/multiple and plus/Tr_Tw_CSA_file.v}
+vlog -vlog01compat -work work +incdir+E:/multiple\ and\ send/multiple\ and\ plus {E:/multiple and send/multiple and plus/adder.v}
+vlog -vlog01compat -work work +incdir+E:/multiple\ and\ send/multiple\ and\ plus {E:/multiple and send/multiple and plus/Get_operator.v}
+vlog -vlog01compat -work work +incdir+E:/multiple\ and\ send/multiple\ and\ plus {E:/multiple and send/multiple and plus/Select_operator.v}
+vlog -vlog01compat -work work +incdir+E:/multiple\ and\ send/multiple\ and\ plus {E:/multiple and send/multiple and plus/Precode.v}
+vlog -vlog01compat -work work +incdir+E:/multiple\ and\ send/multiple\ and\ plus {E:/multiple and send/multiple and plus/First_one.v}
+vlog -vlog01compat -work work +incdir+E:/multiple\ and\ send/multiple\ and\ plus {E:/multiple and send/multiple and plus/First_one_2.v}
+vlog -vlog01compat -work work +incdir+E:/multiple\ and\ send/multiple\ and\ plus {E:/multiple and send/multiple and plus/First_one_4.v}
+vlog -vlog01compat -work work +incdir+E:/multiple\ and\ send/multiple\ and\ plus {E:/multiple and send/multiple and plus/First_one_8.v}
+vlog -vlog01compat -work work +incdir+E:/multiple\ and\ send/multiple\ and\ plus {E:/multiple and send/multiple and plus/First_one_16.v}
+vlog -vlog01compat -work work +incdir+E:/multiple\ and\ send/multiple\ and\ plus {E:/multiple and send/multiple and plus/First_one_32.v}
+vlog -vlog01compat -work work +incdir+E:/multiple\ and\ send/multiple\ and\ plus {E:/multiple and send/multiple and plus/LeadingZeroAnt.v}
+vlog -vlog01compat -work work +incdir+E:/multiple\ and\ send/multiple\ and\ plus {E:/multiple and send/multiple and plus/CAL.v}
+vlog -vlog01compat -work work +incdir+E:/multiple\ and\ send/multiple\ and\ plus {E:/multiple and send/multiple and plus/Abso.v}
+vlog -vlog01compat -work work +incdir+E:/multiple\ and\ send/multiple\ and\ plus {E:/multiple and send/multiple and plus/T5_stage.v}
+vlog -vlog01compat -work work +incdir+E:/multiple\ and\ send/multiple\ and\ plus {E:/multiple and send/multiple and plus/Vari_shift.v}
+vlog -vlog01compat -work work +incdir+E:/multiple\ and\ send/multiple\ and\ plus {E:/multiple and send/multiple and plus/f_t_file.v}
+vlog -vlog01compat -work work +incdir+E:/multiple\ and\ send/multiple\ and\ plus {E:/multiple and send/multiple and plus/f_t_chip.v}
+vlog -vlog01compat -work work +incdir+E:/multiple\ and\ send/multiple\ and\ plus {E:/multiple and send/multiple and plus/tr_tw_csa_chip.v}
+vlog -vlog01compat -work work +incdir+E:/multiple\ and\ send/multiple\ and\ plus {E:/multiple and send/multiple and plus/t4_csa_file.v}
+vlog -vlog01compat -work work +incdir+E:/multiple\ and\ send/multiple\ and\ plus {E:/multiple and send/multiple and plus/fasta.v}
+vlog -vlog01compat -work work +incdir+E:/multiple\ and\ send/multiple\ and\ plus {E:/multiple and send/multiple and plus/con_shift.v}
+vlog -vlog01compat -work work +incdir+E:/multiple\ and\ send/multiple\ and\ plus {E:/multiple and send/multiple and plus/Reverse.v}
+vlog -vlog01compat -work work +incdir+E:/multiple\ and\ send/multiple\ and\ plus {E:/multiple and send/multiple and plus/pretreatment.v}
+vlog -vlog01compat -work work +incdir+E:/multiple\ and\ send/multiple\ and\ plus {E:/multiple and send/multiple and plus/Shifting.v}
+vlog -vlog01compat -work work +incdir+E:/multiple\ and\ send/multiple\ and\ plus {E:/multiple and send/multiple and plus/T3_stage.v}
+vlog -vlog01compat -work work +incdir+E:/multiple\ and\ send/multiple\ and\ plus {E:/multiple and send/multiple and plus/T4_stage.v}
+vlog -vlog01compat -work work +incdir+E:/multiple\ and\ send/multiple\ and\ plus {E:/multiple and send/multiple and plus/T4_reg.v}
+vlog -vlog01compat -work work +incdir+E:/multiple\ and\ send/multiple\ and\ plus {E:/multiple and send/multiple and plus/MaF.v}
+vlog -vlog01compat -work work +incdir+E:/multiple\ and\ send/multiple\ and\ plus {E:/multiple and send/multiple and plus/t2_stage.v}
+vlog -vlog01compat -work work +incdir+E:/multiple\ and\ send/multiple\ and\ plus {E:/multiple and send/multiple and plus/multiple.v}
+vlog -vlog01compat -work work +incdir+E:/multiple\ and\ send/multiple\ and\ plus {E:/multiple and send/multiple and plus/t2_multi_reg.v}
+vlog -vlog01compat -work work +incdir+E:/multiple\ and\ send/multiple\ and\ plus {E:/multiple and send/multiple and plus/t3_tree_reg.v}
+
+vlog -vlog01compat -work work +incdir+E:/multiple\ and\ send/multiple\ and\ plus/simulation/modelsim {E:/multiple and send/multiple and plus/simulation/modelsim/MAP_Top.vt}
+
+vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneiv_hssi_ver -L cycloneiv_pcie_hip_ver -L cycloneiv_ver -L rtl_work -L work -voptargs="+acc"  MAP_Top
+
+add wave *
+view structure
+view signals
+run -all

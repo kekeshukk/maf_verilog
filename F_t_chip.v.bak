@@ -1,0 +1,22 @@
+//4-2压缩器
+module F_t_chip(
+	input										in1,
+	input										in2,
+	input										in3,
+	input										in4,
+	input										cin,
+	output									cout,
+	output									carry,
+	output									sum
+);
+	wire											xor_1;
+	wire											xor_2;
+	wire											xor_3;
+	assign			xor_1	=	in1 ^ in2;
+	assign			xor_2	= 	in4 ^ in3;
+	assign			xor_3 = 	xor_1 ^ xor_2;
+	assign			sum 	= 	xor_3 ^ cin;
+	assign			cout	= 	xor_1 == 0 ? in1 : xor_1 == 1 ? in3 : 0;
+
+	assign         carry = 	xor_3 == 0 ? in4 : xor_3 == 1 ? cin : 0;
+endmodule

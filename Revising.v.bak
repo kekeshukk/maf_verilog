@@ -1,0 +1,709 @@
+module Revising(
+	input			[2:0]						cont,
+	input			[55:0]					GP_p,
+	input			[55:0]					GP_n,
+	input			[55:0]					GP_z,
+	input			[55:0]					GN_p,
+	input			[55:0]					GN_n,
+	input			[55:0]					GN_z,
+	input										S_A,
+	input										S_B,
+	input										S_C,
+	input										S_A_H,
+	input										S_B_H,
+	input										S_C_H,
+	output		[1:0]						revising//修正位,修正有效,首1右移1位,左侧高位,右侧低位
+);
+	wire										signal;
+	wire										signal_h;
+	/*各种编码情况，主要有：0：Z,1:P,2:N,3:Y,4:U*/
+	wire			[27:0]					levelp_1[2:0],leveln_1[2:0];//第一级输出
+	wire			[13:0]					levelp_2[2:0],leveln_2[2:0];//第二级输出
+	wire			[6:0]						levelp_3[2:0],leveln_3[2:0];//第三级输出
+	wire			[3:0]						levelp_4[2:0],leveln_4[2:0];//第四级输出
+	wire			[1:0]						levelp_5[2:0],leveln_5[2:0];//第五级输出
+	wire										levelp_6[2:0],leveln_6[2:0];//第六级输出
+	/*最终的检测结果*/
+	wire			[1:0]						Y_P;//左侧表示高位，右侧低位
+	wire			[1:0]						Y_N;
+	genvar i;
+	assign		signal   =     (!S_A && !S_B && S_C) || (!S_A && S_B && !S_C) || (S_A && S_B && S_C) || (S_A && !S_B && !S_C);
+	assign		signal_h =     (!S_A_H && !S_B_H && S_C_H) || (!S_A_H && S_B_H && !S_C_H) || (S_A_H && S_B_H && S_C_H) || (S_A_H && !S_B_H && !S_C_H);
+	/*positive tree(7 levels)*/
+	/*initial level to first level*/
+	generate
+		for(i = 0; i <= 27; i = i + 1)begin:level_revising_1
+				if(GP_n[i * 2])begin
+					assign levelp_1[i] = 3'd2;
+				end
+				if(GP_z[i * 2] && GP_p[i * 2 + 1])begin
+					assign levelp_1[i] = 3'd1;
+				end
+				if(GP_z[i * 2] && GP_z[i * 2 + 1])begin
+					assign levelp_1[i] = 3'd0;		
+			   end
+				if(GP_z[i * 2] && GP_n[i * 2 + 1])begin
+					assign levelp_1[i] = 3'b010;		
+			   end
+				if(GP_p[i * 2] && GP_z[i * 2 + 1])begin
+					assign levelp_1[i] = 3'd1;		
+			   end
+				if(GP_p[i * 2] && GP_p[i * 2 + 1])begin
+					assign levelp_1[i] = 3'd5;		
+			   end
+				if(GP_p[i * 2] && GP_n[i * 2 + 1])begin
+					assign levelp_1[i] = 3'd3;		
+			   end
+		end
+	endgenerate
+	/*initial level to second level*/
+	generate
+		for(i = 0; i <= 13; i = i + 1)begin:level_revising_2
+			if(levelp_1[i * 2] == 3'd0 && levelp_1[i * 2 + 1] == 3'd0)begin//1_row
+				assign levelp_2[i] = 3'd0;
+			end
+			if(levelp_1[i * 2] == 3'd0 && levelp_1[i * 2 + 1] == 3'd1)begin
+				assign levelp_2[i] = 3'd1;
+			end
+			if(levelp_1[i * 2] == 3'd0 && levelp_1[i * 2 + 1] == 3'd2)begin
+				assign levelp_2[i] = 3'd2;
+			end
+			if(levelp_1[i * 2] == 3'd0 && levelp_1[i * 2 + 1] == 3'd3)begin
+				assign levelp_2[i] = 3'd3;
+			end
+			if(levelp_1[i * 2] == 3'd0 && levelp_1[i * 2 + 1] == 3'd4)begin
+				assign levelp_2[i] = 3'd4;
+			end
+			if(levelp_1[i * 2] == 3'd1 && levelp_1[i * 2 + 1] == 3'd0)begin//2_row
+				assign levelp_2[i] = 3'd1;
+			end
+			if(levelp_1[i * 2] == 3'd1 && levelp_1[i * 2 + 1] == 3'd1)begin
+				assign levelp_2[i] = 3'd4;
+			end
+			if(levelp_1[i * 2] == 3'd1 && levelp_1[i * 2 + 1] == 3'd2)begin
+				assign levelp_2[i] = 3'd3;
+			end
+			if(levelp_1[i * 2] == 3'd1 && levelp_1[i * 2 + 1] == 3'd3)begin
+				assign levelp_2[i] = 3'd4;
+			end
+			if(levelp_1[i * 2] == 3'd1 && levelp_1[i * 2 + 1] == 3'd4)begin
+				assign levelp_2[i] = 3'd4;
+			end
+			if(levelp_1[i * 2] == 3'd2)begin//3_row
+				assign levelp_2[i] = 3'd2;
+			end
+			if(levelp_1[i * 2] == 3'd3)begin//4_row
+				assign levelp_2[i] = 3'd3;
+			end
+			if(levelp_1[i * 2] == 3'd4)begin//5_row
+				assign levelp_2[i] = 3'd4;
+			end
+		end
+	endgenerate
+	/*initial level to third level*/
+	generate
+		for(i = 0; i <= 6; i = i + 1)begin:level_revising_3
+			if(levelp_2[i * 2] == 3'd0 && levelp_2[i * 2 + 1] == 3'd0)begin//1_row
+				assign levelp_3[i] = 3'd0;
+			end
+			if(levelp_2[i * 2] == 3'd0 && levelp_2[i * 2 + 1] == 3'd1)begin
+				assign levelp_3[i] = 3'd1;
+			end
+			if(levelp_2[i * 2] == 3'd0 && levelp_2[i * 2 + 1] == 3'd2)begin
+				assign levelp_3[i] = 3'd2;
+			end
+			if(levelp_2[i * 2] == 3'd0 && levelp_2[i * 2 + 1] == 3'd3)begin
+				assign levelp_3[i] = 3'd3;
+			end
+			if(levelp_2[i * 2] == 3'd0 && levelp_2[i * 2 + 1] == 3'd4)begin
+				assign levelp_3[i] = 3'd4;
+			end
+			if(levelp_2[i * 2] == 3'd1 && levelp_2[i * 2 + 1] == 3'd0)begin//2_row
+				assign levelp_3[i] = 3'd1;
+			end
+			if(levelp_2[i * 2] == 3'd1 && levelp_2[i * 2 + 1] == 3'd1)begin
+				assign levelp_3[i] = 3'd4;
+			end
+			if(levelp_2[i * 2] == 3'd1 && levelp_2[i * 2 + 1] == 3'd2)begin
+				assign levelp_3[i] = 3'd3;
+			end
+			if(levelp_2[i * 2] == 3'd1 && levelp_2[i * 2 + 1] == 3'd3)begin
+				assign levelp_3[i] = 3'd4;
+			end
+			if(levelp_2[i * 2] == 3'd1 && levelp_2[i * 2 + 1] == 3'd4)begin
+				assign levelp_3[i] = 3'd4;
+			end
+			if(levelp_2[i * 2] == 3'd2)begin//3_row
+				assign levelp_3[i] = 3'd2;
+			end
+			if(levelp_2[i * 2] == 3'd3)begin//4_row
+				assign levelp_3[i] = 3'd3;
+			end
+			if(levelp_2[i * 2] == 3'd4)begin//5_row
+				assign levelp_3[i] = 3'd4;
+			end
+		end
+	endgenerate
+	/*initial level to forth level*/
+	generate
+		if(cont == 3'b000 || cont == 3'b010)begin
+			for(i = 0; i <= 2; i = i + 1)begin:level_revising_4
+				if(levelp_3[i * 2] == 3'd0 && levelp_3[i * 2 + 1] == 3'd0)begin//1_row
+					assign levelp_4[i] = 3'd0;
+				end
+				if(levelp_3[i * 2] == 3'd0 && levelp_3[i * 2 + 1] == 3'd1)begin
+					assign levelp_4[i] = 3'd1;
+				end
+				if(levelp_3[i * 2] == 3'd0 && levelp_3[i * 2 + 1] == 3'd2)begin
+					assign levelp_4[i] = 3'd2;
+				end
+				if(levelp_3[i * 2] == 3'd0 && levelp_3[i * 2 + 1] == 3'd3)begin
+					assign levelp_4[i] = 3'd3;
+				end
+				if(levelp_3[i * 2] == 3'd0 && levelp_3[i * 2 + 1] == 3'd4)begin
+					assign levelp_4[i] = 3'd4;
+				end
+				if(levelp_3[i * 2] == 3'd1 && levelp_3[i * 2 + 1] == 3'd0)begin//2_row
+					assign levelp_4[i] = 3'd1;
+				end
+				if(levelp_3[i * 2] == 3'd1 && levelp_3[i * 2 + 1] == 3'd1)begin
+					assign levelp_4[i] = 3'd4;
+				end
+				if(levelp_3[i * 2] == 3'd1 && levelp_3[i * 2 + 1] == 3'd2)begin
+					assign levelp_4[i] = 3'd3;
+				end
+				if(levelp_3[i * 2] == 3'd1 && levelp_3[i * 2 + 1] == 3'd3)begin
+					assign levelp_4[i] = 3'd4;
+				end
+				if(levelp_3[i * 2] == 3'd1 && levelp_3[i * 2 + 1] == 3'd4)begin
+					assign levelp_4[i] = 3'd4;
+				end
+				if(levelp_3[i * 2] == 3'd2)begin//3_row
+					assign levelp_3[i] = 3'd2;
+				end
+				if(levelp_3[i * 2] == 3'd3)begin//4_row
+					assign levelp_4[i] = 3'd3;
+				end
+				if(levelp_3[i * 2] == 3'd4)begin//5_row
+					assign levelp_4[i] = 3'd4;
+				end
+			end
+		end else begin
+			/*处理高位的并行半精度编码，只结合低两位*/
+			if(levelp_3[5] == 3'd0 && levelp_3[4] == 3'd0)begin//1_row
+				assign levelp_4[2] = 3'd0;
+			end
+			if(levelp_3[5] == 3'd0 && levelp_3[4] == 3'd1)begin
+				assign levelp_4[2] = 3'd1;
+			end
+			if(levelp_3[5] == 3'd0 && levelp_3[4] == 3'd2)begin
+				assign levelp_4[2] = 3'd2;
+			end
+			if(levelp_3[5] == 3'd0 && levelp_3[4] == 3'd3)begin
+				assign levelp_4[2] = 3'd3;
+			end
+			if(levelp_3[5] == 3'd0 && levelp_3[4] == 3'd4)begin
+				assign levelp_4[2] = 3'd4;
+			end
+			if(levelp_3[5] == 3'd1 && levelp_3[4] == 3'd0)begin//2_row
+				assign levelp_4[2] = 3'd1;
+			end
+			if(levelp_3[5] == 3'd1 && levelp_3[4] == 3'd1)begin
+				assign levelp_4[2] = 3'd4;
+			end
+			if(levelp_3[5] == 3'd1 && levelp_3[4] == 3'd2)begin
+				assign levelp_4[2] = 3'd3;
+			end
+			if(levelp_3[5] == 3'd1 && levelp_3[4] == 3'd3)begin
+				assign levelp_4[2] = 3'd4;
+			end
+			if(levelp_3[5] == 3'd1 && levelp_3[4] == 3'd4)begin
+				assign levelp_4[2] = 3'd4;
+			end
+			if(levelp_3[5] == 3'd2)begin//3_row
+				assign levelp_4[2] = 3'd2;
+			end
+			if(levelp_3[5] == 3'd3)begin//4_row
+				assign levelp_4[2] = 3'd3;
+			end
+			if(levelp_3[5] == 3'd4)begin//5_row
+				assign levelp_4[2] = 3'd4;
+			end
+			/*处理低位的并行半精度编码，只结合低两位*/
+			if(levelp_3[1] == 3'd0 && levelp_3[0] == 3'd0)begin//1_row
+				assign levelp_4[0] = 3'd0;
+			end
+			if(levelp_3[1] == 3'd0 && levelp_3[0] == 3'd1)begin
+				assign levelp_4[0] = 3'd1;
+			end
+			if(levelp_3[1] == 3'd0 && levelp_3[0] == 3'd2)begin
+				assign levelp_4[0] = 3'd2;
+			end
+			if(levelp_3[1] == 3'd0 && levelp_3[0] == 3'd3)begin
+				assign levelp_4[0] = 3'd3;
+			end
+			if(levelp_3[1] == 3'd0 && levelp_3[0] == 3'd4)begin
+				assign levelp_4[0] = 3'd4;
+			end
+			if(levelp_3[1] == 3'd1 && levelp_3[0] == 3'd0)begin//2_row
+				assign levelp_4[0] = 3'd1;
+			end
+			if(levelp_3[1] == 3'd1 && levelp_3[0] == 3'd1)begin
+				assign levelp_4[0] = 3'd4;
+			end
+			if(levelp_3[1] == 3'd1 && levelp_3[0] == 3'd2)begin
+				assign levelp_4[0] = 3'd3;
+			end
+			if(levelp_3[1] == 3'd1 && levelp_3[0] == 3'd3)begin
+				assign levelp_4[0] = 3'd4;
+			end
+			if(levelp_3[1] == 3'd1 && levelp_3[0] == 3'd4)begin
+				assign levelp_4[0] = 3'd4;
+			end
+			if(levelp_3[1] == 3'd2)begin//3_row
+				assign levelp_4[0] = 3'd2;
+			end
+			if(levelp_3[1] == 3'd3)begin//4_row
+				assign levelp_4[0] = 3'd3;
+			end
+			if(levelp_3[1] == 3'd4)begin//5_row
+				assign levelp_4[0] = 3'd4;
+			end
+			/*处理低编码的左侧位置*/
+			assign levelp_4[1] = levelp_3[2];
+			/*处理高编码的左侧位置*/
+			assign levelp_4[3] = levelp_3[5];
+		end
+	endgenerate
+	/*initial level to fifth level*/
+	generate
+		for(i = 0; i <= 1; i = i + 1)begin:level_revising_5
+			if(levelp_4[i * 2] == 3'd0 && levelp_4[i * 2 + 1] == 3'd0)begin//1_row
+				assign levelp_5[i] = 3'd0;
+			end
+			if(levelp_4[i * 2] == 3'd0 && levelp_4[i * 2 + 1] == 3'd1)begin
+				assign levelp_5[i] = 3'd1;
+			end
+			if(levelp_4[i * 2] == 3'd0 && levelp_4[i * 2 + 1] == 3'd2)begin
+				assign levelp_5[i] = 3'd2;
+			end
+			if(levelp_4[i * 2] == 3'd0 && levelp_4[i * 2 + 1] == 3'd3)begin
+				assign levelp_5[i] = 3'd3;
+			end
+			if(levelp_4[i * 2] == 3'd0 && levelp_4[i * 2 + 1] == 3'd4)begin
+				assign levelp_5[i] = 3'd4;
+			end
+			if(levelp_4[i * 2] == 3'd1 && levelp_4[i * 2 + 1] == 3'd0)begin//2_row
+				assign levelp_5[i] = 3'd1;
+			end
+			if(levelp_4[i * 2] == 3'd1 && levelp_4[i * 2 + 1] == 3'd1)begin
+				assign levelp_5[i] = 3'd4;
+			end
+			if(levelp_4[i * 2] == 3'd1 && levelp_4[i * 2 + 1] == 3'd2)begin
+				assign levelp_5[i] = 3'd3;
+			end
+			if(levelp_4[i * 2] == 3'd1 && levelp_4[i * 2 + 1] == 3'd3)begin
+				assign levelp_5[i] = 3'd4;
+			end
+			if(levelp_4[i * 2] == 3'd1 && levelp_4[i * 2 + 1] == 3'd4)begin
+				assign levelp_5[i] = 3'd4;
+			end
+			if(levelp_4[i * 2] == 3'd2)begin//3_row
+				assign levelp_5[i] = 3'd2;
+			end
+			if(levelp_4[i * 2] == 3'd3)begin//4_row
+				assign levelp_5[i] = 3'd3;
+			end
+			if(levelp_4[i * 2] == 3'd4)begin//5_row
+				assign levelp_5[i] = 3'd4;
+			end
+		end
+	endgenerate
+	/*initial level to sixth level*/
+	generate
+		if(cont == 3'b000 || cont == 3'b010)begin
+			if(levelp_5[1] == 3'd0 && levelp_5[0] == 3'd0)begin//1_row
+				assign levelp_6[0] = 3'd0;
+			end
+			if(levelp_5[1] == 3'd0 && levelp_5[0] == 3'd1)begin
+				assign levelp_6[0] = 3'd1;
+			end
+			if(levelp_5[1] == 3'd0 && levelp_5[0] == 3'd2)begin
+				assign levelp_6[0] = 3'd2;
+			end
+			if(levelp_5[1] == 3'd0 && levelp_5[0] == 3'd3)begin
+				assign levelp_6[0] = 3'd3;
+			end
+			if(levelp_5[1] == 3'd0 && levelp_5[0] == 3'd4)begin
+				assign levelp_6[0] = 3'd4;
+			end
+			if(levelp_5[1] == 3'd1 && levelp_5[0] == 3'd0)begin//2_row
+				assign levelp_6[0] = 3'd1;
+			end
+			if(levelp_5[1] == 3'd1 && levelp_5[0] == 3'd1)begin
+				assign levelp_6[0] = 3'd4;
+			end
+			if(levelp_5[1] == 3'd1 && levelp_5[0] == 3'd2)begin
+				assign levelp_6[0] = 3'd3;
+			end
+			if(levelp_5[1] == 3'd1 && levelp_5[0] == 3'd3)begin
+				assign levelp_6[0] = 3'd4;
+			end
+			if(levelp_5[1] == 3'd1 && levelp_5[0] == 3'd4)begin
+				assign levelp_6[0] = 3'd4;
+			end
+			if(levelp_5[1] == 3'd2)begin//3_row
+				assign levelp_6[0] = 3'd2;
+			end
+			if(levelp_5[1] == 3'd3)begin//4_row
+				assign levelp_6[0] = 3'd3;
+			end
+			if(levelp_5[1] == 3'd4)begin//5_row
+				assign levelp_6[0] = 3'd4;
+			end
+			assign Y_P[0] = level_6[0] == 3'd3 || level_6[0] == 3'd2 //有问题*******
+		end else begin
+			assign Y_P[1] = level_5[1] == 3'd3 || level_5[1] == 3'd2 //有问题*******
+			assign Y_P[1] = level_5[1] == 3'd3 || level_5[1] == 3'd2 //有问题*******
+		end
+	endgenerate
+	/*neg tree(7 levels)*/
+	/*initial level to first level*/
+	generate
+		for(i = 0; i <= 27; i = i + 1)begin:level_revising_1
+				if(GP_n[i * 2])begin
+					assign levelp_1[i] = 3'd2;
+				end
+				if(GP_z[i * 2] && GP_p[i * 2 + 1])begin
+					assign levelp_1[i] = 3'd1;
+				end
+				if(GP_z[i * 2] && GP_z[i * 2 + 1])begin
+					assign levelp_1[i] = 3'd0;		
+			   end
+				if(GP_z[i * 2] && GP_n[i * 2 + 1])begin
+					assign levelp_1[i] = 3'b010;		
+			   end
+				if(GP_p[i * 2] && GP_z[i * 2 + 1])begin
+					assign levelp_1[i] = 3'd1;		
+			   end
+				if(GP_p[i * 2] && GP_p[i * 2 + 1])begin
+					assign levelp_1[i] = 3'd5;		
+			   end
+				if(GP_p[i * 2] && GP_n[i * 2 + 1])begin
+					assign levelp_1[i] = 3'd3;		
+			   end
+		end
+	endgenerate
+	/*initial level to second level*/
+	generate
+		for(i = 0; i <= 13; i = i + 1)begin:level_revising_2
+			if(levelp_1[i * 2] == 3'd0 && levelp_1[i * 2 + 1] == 3'd0)begin//1_row
+				assign levelp_2[i] = 3'd0;
+			end
+			if(levelp_1[i * 2] == 3'd0 && levelp_1[i * 2 + 1] == 3'd1)begin
+				assign levelp_2[i] = 3'd1;
+			end
+			if(levelp_1[i * 2] == 3'd0 && levelp_1[i * 2 + 1] == 3'd2)begin
+				assign levelp_2[i] = 3'd2;
+			end
+			if(levelp_1[i * 2] == 3'd0 && levelp_1[i * 2 + 1] == 3'd3)begin
+				assign levelp_2[i] = 3'd3;
+			end
+			if(levelp_1[i * 2] == 3'd0 && levelp_1[i * 2 + 1] == 3'd4)begin
+				assign levelp_2[i] = 3'd4;
+			end
+			if(levelp_1[i * 2] == 3'd1 && levelp_1[i * 2 + 1] == 3'd0)begin//2_row
+				assign levelp_2[i] = 3'd1;
+			end
+			if(levelp_1[i * 2] == 3'd1 && levelp_1[i * 2 + 1] == 3'd1)begin
+				assign levelp_2[i] = 3'd4;
+			end
+			if(levelp_1[i * 2] == 3'd1 && levelp_1[i * 2 + 1] == 3'd2)begin
+				assign levelp_2[i] = 3'd3;
+			end
+			if(levelp_1[i * 2] == 3'd1 && levelp_1[i * 2 + 1] == 3'd3)begin
+				assign levelp_2[i] = 3'd4;
+			end
+			if(levelp_1[i * 2] == 3'd1 && levelp_1[i * 2 + 1] == 3'd4)begin
+				assign levelp_2[i] = 3'd4;
+			end
+			if(levelp_1[i * 2] == 3'd2)begin//3_row
+				assign levelp_2[i] = 3'd2;
+			end
+			if(levelp_1[i * 2] == 3'd3)begin//4_row
+				assign levelp_2[i] = 3'd3;
+			end
+			if(levelp_1[i * 2] == 3'd4)begin//5_row
+				assign levelp_2[i] = 3'd4;
+			end
+		end
+	endgenerate
+	/*initial level to third level*/
+	generate
+		for(i = 0; i <= 6; i = i + 1)begin:level_revising_3
+			if(levelp_2[i * 2] == 3'd0 && levelp_2[i * 2 + 1] == 3'd0)begin//1_row
+				assign levelp_3[i] = 3'd0;
+			end
+			if(levelp_2[i * 2] == 3'd0 && levelp_2[i * 2 + 1] == 3'd1)begin
+				assign levelp_3[i] = 3'd1;
+			end
+			if(levelp_2[i * 2] == 3'd0 && levelp_2[i * 2 + 1] == 3'd2)begin
+				assign levelp_3[i] = 3'd2;
+			end
+			if(levelp_2[i * 2] == 3'd0 && levelp_2[i * 2 + 1] == 3'd3)begin
+				assign levelp_3[i] = 3'd3;
+			end
+			if(levelp_2[i * 2] == 3'd0 && levelp_2[i * 2 + 1] == 3'd4)begin
+				assign levelp_3[i] = 3'd4;
+			end
+			if(levelp_2[i * 2] == 3'd1 && levelp_2[i * 2 + 1] == 3'd0)begin//2_row
+				assign levelp_3[i] = 3'd1;
+			end
+			if(levelp_2[i * 2] == 3'd1 && levelp_2[i * 2 + 1] == 3'd1)begin
+				assign levelp_3[i] = 3'd4;
+			end
+			if(levelp_2[i * 2] == 3'd1 && levelp_2[i * 2 + 1] == 3'd2)begin
+				assign levelp_3[i] = 3'd3;
+			end
+			if(levelp_2[i * 2] == 3'd1 && levelp_2[i * 2 + 1] == 3'd3)begin
+				assign levelp_3[i] = 3'd4;
+			end
+			if(levelp_2[i * 2] == 3'd1 && levelp_2[i * 2 + 1] == 3'd4)begin
+				assign levelp_3[i] = 3'd4;
+			end
+			if(levelp_2[i * 2] == 3'd2)begin//3_row
+				assign levelp_3[i] = 3'd2;
+			end
+			if(levelp_2[i * 2] == 3'd3)begin//4_row
+				assign levelp_3[i] = 3'd3;
+			end
+			if(levelp_2[i * 2] == 3'd4)begin//5_row
+				assign levelp_3[i] = 3'd4;
+			end
+		end
+	endgenerate
+	/*initial level to forth level*/
+	generate
+		if(cont == 3'b000 || cont == 3'b010)begin
+			for(i = 0; i <= 2; i = i + 1)begin:level_revising_4
+				if(levelp_3[i * 2] == 3'd0 && levelp_3[i * 2 + 1] == 3'd0)begin//1_row
+					assign levelp_4[i] = 3'd0;
+				end
+				if(levelp_3[i * 2] == 3'd0 && levelp_3[i * 2 + 1] == 3'd1)begin
+					assign levelp_4[i] = 3'd1;
+				end
+				if(levelp_3[i * 2] == 3'd0 && levelp_3[i * 2 + 1] == 3'd2)begin
+					assign levelp_4[i] = 3'd2;
+				end
+				if(levelp_3[i * 2] == 3'd0 && levelp_3[i * 2 + 1] == 3'd3)begin
+					assign levelp_4[i] = 3'd3;
+				end
+				if(levelp_3[i * 2] == 3'd0 && levelp_3[i * 2 + 1] == 3'd4)begin
+					assign levelp_4[i] = 3'd4;
+				end
+				if(levelp_3[i * 2] == 3'd1 && levelp_3[i * 2 + 1] == 3'd0)begin//2_row
+					assign levelp_4[i] = 3'd1;
+				end
+				if(levelp_3[i * 2] == 3'd1 && levelp_3[i * 2 + 1] == 3'd1)begin
+					assign levelp_4[i] = 3'd4;
+				end
+				if(levelp_3[i * 2] == 3'd1 && levelp_3[i * 2 + 1] == 3'd2)begin
+					assign levelp_4[i] = 3'd3;
+				end
+				if(levelp_3[i * 2] == 3'd1 && levelp_3[i * 2 + 1] == 3'd3)begin
+					assign levelp_4[i] = 3'd4;
+				end
+				if(levelp_3[i * 2] == 3'd1 && levelp_3[i * 2 + 1] == 3'd4)begin
+					assign levelp_4[i] = 3'd4;
+				end
+				if(levelp_3[i * 2] == 3'd2)begin//3_row
+					assign levelp_3[i] = 3'd2;
+				end
+				if(levelp_3[i * 2] == 3'd3)begin//4_row
+					assign levelp_4[i] = 3'd3;
+				end
+				if(levelp_3[i * 2] == 3'd4)begin//5_row
+					assign levelp_4[i] = 3'd4;
+				end
+			end
+		end else begin
+			/*处理高位的并行半精度编码，只结合低两位*/
+			if(levelp_3[5] == 3'd0 && levelp_3[4] == 3'd0)begin//1_row
+				assign levelp_4[2] = 3'd0;
+			end
+			if(levelp_3[5] == 3'd0 && levelp_3[4] == 3'd1)begin
+				assign levelp_4[2] = 3'd1;
+			end
+			if(levelp_3[5] == 3'd0 && levelp_3[4] == 3'd2)begin
+				assign levelp_4[2] = 3'd2;
+			end
+			if(levelp_3[5] == 3'd0 && levelp_3[4] == 3'd3)begin
+				assign levelp_4[2] = 3'd3;
+			end
+			if(levelp_3[5] == 3'd0 && levelp_3[4] == 3'd4)begin
+				assign levelp_4[2] = 3'd4;
+			end
+			if(levelp_3[5] == 3'd1 && levelp_3[4] == 3'd0)begin//2_row
+				assign levelp_4[2] = 3'd1;
+			end
+			if(levelp_3[5] == 3'd1 && levelp_3[4] == 3'd1)begin
+				assign levelp_4[2] = 3'd4;
+			end
+			if(levelp_3[5] == 3'd1 && levelp_3[4] == 3'd2)begin
+				assign levelp_4[2] = 3'd3;
+			end
+			if(levelp_3[5] == 3'd1 && levelp_3[4] == 3'd3)begin
+				assign levelp_4[2] = 3'd4;
+			end
+			if(levelp_3[5] == 3'd1 && levelp_3[4] == 3'd4)begin
+				assign levelp_4[2] = 3'd4;
+			end
+			if(levelp_3[5] == 3'd2)begin//3_row
+				assign levelp_4[2] = 3'd2;
+			end
+			if(levelp_3[5] == 3'd3)begin//4_row
+				assign levelp_4[2] = 3'd3;
+			end
+			if(levelp_3[5] == 3'd4)begin//5_row
+				assign levelp_4[2] = 3'd4;
+			end
+			/*处理低位的并行半精度编码，只结合低两位*/
+			if(levelp_3[1] == 3'd0 && levelp_3[0] == 3'd0)begin//1_row
+				assign levelp_4[0] = 3'd0;
+			end
+			if(levelp_3[1] == 3'd0 && levelp_3[0] == 3'd1)begin
+				assign levelp_4[0] = 3'd1;
+			end
+			if(levelp_3[1] == 3'd0 && levelp_3[0] == 3'd2)begin
+				assign levelp_4[0] = 3'd2;
+			end
+			if(levelp_3[1] == 3'd0 && levelp_3[0] == 3'd3)begin
+				assign levelp_4[0] = 3'd3;
+			end
+			if(levelp_3[1] == 3'd0 && levelp_3[0] == 3'd4)begin
+				assign levelp_4[0] = 3'd4;
+			end
+			if(levelp_3[1] == 3'd1 && levelp_3[0] == 3'd0)begin//2_row
+				assign levelp_4[0] = 3'd1;
+			end
+			if(levelp_3[1] == 3'd1 && levelp_3[0] == 3'd1)begin
+				assign levelp_4[0] = 3'd4;
+			end
+			if(levelp_3[1] == 3'd1 && levelp_3[0] == 3'd2)begin
+				assign levelp_4[0] = 3'd3;
+			end
+			if(levelp_3[1] == 3'd1 && levelp_3[0] == 3'd3)begin
+				assign levelp_4[0] = 3'd4;
+			end
+			if(levelp_3[1] == 3'd1 && levelp_3[0] == 3'd4)begin
+				assign levelp_4[0] = 3'd4;
+			end
+			if(levelp_3[1] == 3'd2)begin//3_row
+				assign levelp_4[0] = 3'd2;
+			end
+			if(levelp_3[1] == 3'd3)begin//4_row
+				assign levelp_4[0] = 3'd3;
+			end
+			if(levelp_3[1] == 3'd4)begin//5_row
+				assign levelp_4[0] = 3'd4;
+			end
+			/*处理低编码的左侧位置*/
+			assign levelp_4[1] = levelp_3[2];
+			/*处理高编码的左侧位置*/
+			assign levelp_4[3] = levelp_3[5];
+		end
+	endgenerate
+	/*initial level to fifth level*/
+	generate
+		for(i = 0; i <= 1; i = i + 1)begin:level_revising_5
+			if(levelp_4[i * 2] == 3'd0 && levelp_4[i * 2 + 1] == 3'd0)begin//1_row
+				assign levelp_5[i] = 3'd0;
+			end
+			if(levelp_4[i * 2] == 3'd0 && levelp_4[i * 2 + 1] == 3'd1)begin
+				assign levelp_5[i] = 3'd1;
+			end
+			if(levelp_4[i * 2] == 3'd0 && levelp_4[i * 2 + 1] == 3'd2)begin
+				assign levelp_5[i] = 3'd2;
+			end
+			if(levelp_4[i * 2] == 3'd0 && levelp_4[i * 2 + 1] == 3'd3)begin
+				assign levelp_5[i] = 3'd3;
+			end
+			if(levelp_4[i * 2] == 3'd0 && levelp_4[i * 2 + 1] == 3'd4)begin
+				assign levelp_5[i] = 3'd4;
+			end
+			if(levelp_4[i * 2] == 3'd1 && levelp_4[i * 2 + 1] == 3'd0)begin//2_row
+				assign levelp_5[i] = 3'd1;
+			end
+			if(levelp_4[i * 2] == 3'd1 && levelp_4[i * 2 + 1] == 3'd1)begin
+				assign levelp_5[i] = 3'd4;
+			end
+			if(levelp_4[i * 2] == 3'd1 && levelp_4[i * 2 + 1] == 3'd2)begin
+				assign levelp_5[i] = 3'd3;
+			end
+			if(levelp_4[i * 2] == 3'd1 && levelp_4[i * 2 + 1] == 3'd3)begin
+				assign levelp_5[i] = 3'd4;
+			end
+			if(levelp_4[i * 2] == 3'd1 && levelp_4[i * 2 + 1] == 3'd4)begin
+				assign levelp_5[i] = 3'd4;
+			end
+			if(levelp_4[i * 2] == 3'd2)begin//3_row
+				assign levelp_5[i] = 3'd2;
+			end
+			if(levelp_4[i * 2] == 3'd3)begin//4_row
+				assign levelp_5[i] = 3'd3;
+			end
+			if(levelp_4[i * 2] == 3'd4)begin//5_row
+				assign levelp_5[i] = 3'd4;
+			end
+		end
+	endgenerate
+	/*initial level to sixth level*/
+	generate
+		if(cont == 3'b000 || cont == 3'b010)begin
+			if(levelp_5[1] == 3'd0 && levelp_5[0] == 3'd0)begin//1_row
+				assign levelp_6[0] = 3'd0;
+			end
+			if(levelp_5[1] == 3'd0 && levelp_5[0] == 3'd1)begin
+				assign levelp_6[0] = 3'd1;
+			end
+			if(levelp_5[1] == 3'd0 && levelp_5[0] == 3'd2)begin
+				assign levelp_6[0] = 3'd2;
+			end
+			if(levelp_5[1] == 3'd0 && levelp_5[0] == 3'd3)begin
+				assign levelp_6[0] = 3'd3;
+			end
+			if(levelp_5[1] == 3'd0 && levelp_5[0] == 3'd4)begin
+				assign levelp_6[0] = 3'd4;
+			end
+			if(levelp_5[1] == 3'd1 && levelp_5[0] == 3'd0)begin//2_row
+				assign levelp_6[0] = 3'd1;
+			end
+			if(levelp_5[1] == 3'd1 && levelp_5[0] == 3'd1)begin
+				assign levelp_6[0] = 3'd4;
+			end
+			if(levelp_5[1] == 3'd1 && levelp_5[0] == 3'd2)begin
+				assign levelp_6[0] = 3'd3;
+			end
+			if(levelp_5[1] == 3'd1 && levelp_5[0] == 3'd3)begin
+				assign levelp_6[0] = 3'd4;
+			end
+			if(levelp_5[1] == 3'd1 && levelp_5[0] == 3'd4)begin
+				assign levelp_6[0] = 3'd4;
+			end
+			if(levelp_5[1] == 3'd2)begin//3_row
+				assign levelp_6[0] = 3'd2;
+			end
+			if(levelp_5[1] == 3'd3)begin//4_row
+				assign levelp_6[0] = 3'd3;
+			end
+			if(levelp_5[1] == 3'd4)begin//5_row
+				assign levelp_6[0] = 3'd4;
+			end
+			assign Y_N[0] = level_6[0] == 3'd3 || level_6[0] == 3'd2 //有问题*******
+		end else begin
+			assign Y_N[1] = level_5[1] == 3'd3 || level_5[1] == 3'd2 //有问题*******
+			assign Y_N[1] = level_5[1] == 3'd3 || level_5[1] == 3'd2 //有问题*******
+		end
+	endgenerate
+	
+endmodule

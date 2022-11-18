@@ -1,0 +1,19 @@
+`include "conf.v"
+module T3_tree_reg(
+	input										clk,
+	input										rstn,
+	input				[47:0]				Carry_in,
+	input				[47:0]				Sum_in,
+	output	reg	[47:0]				Carry_out,
+	output	reg	[47:0]				Sum_out
+);
+	always@(posedge clk or negedge rstn)begin
+		if(!rstn)begin
+			Carry_out	<= #`PERIOD 48'b0;
+			Sum_out		<= #`PERIOD 48'b0;
+		end else begin
+			Carry_out	<= #`PERIOD Carry_in;
+			Sum_out		<= #`PERIOD Sum_in;
+		end
+	end
+endmodule

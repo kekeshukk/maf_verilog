@@ -1,0 +1,9 @@
+module Revising(
+	input			[55:0]					GP_p,
+	input			[55:0]					GP_n,
+	input			[55:0]					GP_z,
+	input			[55:0]					GN_p,
+	input			[55:0]					GN_n,
+	input			[55:0]					GN_z,
+);
+endmodule

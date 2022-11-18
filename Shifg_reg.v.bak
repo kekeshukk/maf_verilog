@@ -1,0 +1,26 @@
+module Shift_reg(
+	input										clk,
+	input										rstn,
+	input										cont,//状态控制变量
+	input				[22:0]				M_C,//模式2中靠后的
+	input				[9:0]					M_C_H,//模式2中靠前的
+	output			[75:0]				sh_reg//移位寄存器
+);
+	//自己定义的移位寄存器；
+	reg				[75:0]				temp;
+	always @(posedge clk or negedge rstn)begin
+		if(!rstn)begin
+			sh_reg			<=			76'b0;
+		end
+		else 
+		if(cont == 3'b000)begin
+			temp				<=			{'b1,M_A,2'b0,48'b0,2'b0};
+		end
+		else if(cont == 3'b001) begin
+			temp				<=			{1'b1,M_C_H,2'b0,11'b0,1'b0,1'b0,1'b0,M_C,2'b0,11'b0,2'b0};
+		end
+		else begin
+			temp				<=			{1'b1,M_C,2'b0,11'b0,11'b0,2'b0,26'b0};
+		end
+	end
+endmodule

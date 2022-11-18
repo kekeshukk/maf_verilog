@@ -1,0 +1,11 @@
+//第4级流水线的结果
+module		CSA_file(
+	input			[47:0]				in1,
+	input			[47:0]				in2,//要加1修正
+	input			[47:0]				in3,
+	output	reg[47:0]				Carry,
+	output	reg[47:0]				Sum
+);
+	wire			[47:0]				in_temp;
+	
+endmodule;

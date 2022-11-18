@@ -1,0 +1,120 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Copyright (C) 1991-2013 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench template that is freely editable to  
+// suit user's needs .Comments are provided in each section to help the user    
+// fill out necessary details.                                                  
+// *****************************************************************************
+// Generated on "01/15/2021 21:08:21"
+                                                                                
+// Verilog Test Bench template for design : Sobel_Top
+// 
+// Simulation tool : ModelSim-Altera (Verilog)
+// 
+`timescale 1 ns/ 1 ps
+`define Clock_period 50
+
+module MAP_Top();
+	reg clk;
+	reg rstn;
+	reg [31:0] A;
+	reg [31:0] B;
+	reg [31:0] C;	reg [47:0]	M_A; reg [47:0]	M_B; reg [47:0] M_C;
+	reg [2:0]  cont;
+	reg 			signal;
+	reg 		   signal_h;
+	wire 	[47:0]		sum_lin;
+	wire 	[47:0]		carry_lin;
+	wire  [31:0]       out;
+	reg   [47:0] x;
+	reg   [47:0] y;
+	wire   [47:0] s;
+	wire			c;
+	reg			[25:0]							M_C_A;
+	reg			[1:0]						d;
+	reg			[47:0]					Sum;
+	reg			[47:0]					Carry;
+	reg										S_A;
+	reg										S_B;
+	reg										S_C;
+	reg										S_A_H;
+	reg										S_B_H;
+	reg										S_C_H;
+	MAP map (
+	// port map - connection between master ports and signals/registers   
+		.clk										(clk),
+		.rstn										(rstn),
+		.cont										(cont),
+//		.M_C_A									(M_C_A),
+//		.Sum										(Sum),
+////		.Carry									(Carry),
+//		.S_A										(S_A),
+//		.S_B										(S_B),
+//		.S_C										(S_C),
+//		.S_A_H									(S_A_H),
+//		.S_B_H									(S_B_H),
+//		.S_C_H									(S_C_H),
+//		.revising								(revise)
+		
+//		.d											(d),
+//		.P											(P),
+//		.V											(V)
+		.A											(A),
+		.B											(B),
+		.C											(C),
+		.out										(out)
+	);
+//	assign out[2:0] = 3'b0;
+//	assign out[31:3]=29'b0;
+	initial                                                
+	begin                                                  
+		clk = 'b0;
+		rstn = 1'b0;
+		$finish;
+		cont = 3'b000; 
+		#(`Clock_period*5);
+		rstn = 1'b1;
+		
+	/*模式1*/
+		cont = 3'b000;
+		A = 32'b0100_0010_0100_0000_0000_0000_0000_0000;
+		B = 32'b0100_0010_0010_0000_0000_0000_0000_0000;
+		C = 32'b0100_0010_1110_0000_0000_0000_0000_0000;
+		#(20)cont = 3'b000;
+		A = 32'b01000000010110111000010100011110;
+		B = 32'b01000001000001101110000101000111;
+		C = 32'b01000001010101101110000101000111;
+	/*模式2*/
+	   #(20);
+		   A = 32'b0101_0010_0000_0000_1100_1011_0000_0000;
+		B =32'b0100_1110_1000_0000_0101_1001_1000_0000;
+		C =32'b1100_0101_0000_0000_1011_0010_0000_0000;
+		cont = 3'b001;
+	/*模式3*/
+		#(20);	
+	  	 A = 32'b0101_0010_0000_0000_1100_1011_0000_0000;
+		B = 32'b0100_1110_1000_0000_0101_1001_1000_0000;
+		C = 32'b0100_0010_1110_0000_0000_0000_0000_0000;
+		cont = 3'b010;
+		$display("Running testbench");
+	/*TEST*/
+
+		#(500);
+		$stop;
+	end                                                    
+	always
+    	#(10) clk = ~clk;                                                
+endmodule

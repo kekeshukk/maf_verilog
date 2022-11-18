@@ -1,0 +1,60 @@
+
+`timescale 1 ns/ 1 ps
+`define Clock_period 20
+module MAP_Top();
+	reg clk;
+	reg rstn;
+	reg [31:0] A;
+	reg [31:0] B;
+	reg [31:0] C;	
+	reg [2:0]  ctrl;
+	
+	reg [31:0] data_mem [1500:0];
+
+	wire  [31:0]       out;
+	wire rst_write = clk & rstn;
+	MAP u (
+	.clk										(clk),
+		.rstn										(rstn),
+		.cont										(ctrl),
+	
+		.A											(A),
+		.B											(B),
+		.C											(C),
+		.out										(out)
+	);
+
+	integer i;
+	integer file_out;
+initial begin
+    file_out = $fopen("mixer_out.txt");
+    if (!file_out) begin
+        $display("can't open file");
+        $finish;
+    end
+   clk = 1'b0;
+    rstn = 1'b0;
+    $finish;
+//    ctrl = 3'b000; 
+      ctrl= 3'd1;
+    #(`Clock_period*5);
+    rstn = 1'b1;
+    $readmemb("D:/CeShi.txt",data_mem);
+    for(i=0;i <= 1;i=i+1)begin
+//        #20 ctrl = 3'b000;
+        #20 ctrl = 3'b000;
+        A = data_mem[i * 3];
+        B = data_mem[i * 3 +1];
+        C = data_mem[i * 3 +2];
+        $display("number:%d\n",i);
+    end   
+    $fclose(data_mem);
+    $fclose(file_out); 
+    #(500);
+    $stop;
+    end      
+    always @ (posedge rst_write) begin
+        #20  $fdisplay(file_out, "%b", out); 
+    end                                             
+    always #(10) clk = ~clk;                                                                                           
+endmodule

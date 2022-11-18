@@ -1,0 +1,23 @@
+module adder(
+	input			[47:0]					x,
+	input			[47:0]					y,
+	output		[47:0]					sum,
+	output									cout,
+);
+	wire			[11:0]					carry;
+	assign			carry[0]			=			1'b0;
+	
+	genvar i;
+	parameter ASIZE = 11;
+	generate
+		for(i = 0; i <= ASIZE; i = i + 1)begin:       fasta_final
+			fastadder fasa(
+				.a										(x[(i+1)*4-1:i* 4]),
+				.b										(y[(i+1)*4-1:i* 4]),
+				.cin									(carry[i]),
+				.sum										(sum[(i+1)*4:i*4]),
+				.c_out									(carry[i+1])	
+			);
+		end
+	endgenerate
+endmodule

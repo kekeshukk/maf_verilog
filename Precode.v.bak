@@ -1,0 +1,75 @@
+module Precoding(
+	input										cont,//控制
+	input			[55:0]					op_0,//操作数1
+	input			[55:0]					op_1,//操作数2
+	input										S_A,
+	input										S_B,
+	input										S_C,
+	input										S_A_H,
+	input										S_B_H,
+	input										S_C_H,
+	output	reg[55:0]					F,
+	output	reg[55:0]					GP_p,
+	output	reg[55:0]					GP_n,
+	output	reg[55:0]					GP_z,
+	output	reg[55:0]					GN_p,
+	output	reg[55:0]					GN_n,
+	output	reg[55:0]					GN_z
+);
+	wire										signal;//减有效
+	wire										signal_h;//减有效
+	wire			[55:0]					G;
+	wire			[55:0]					Z;
+	wire			[55:0]					T;
+	reg			[5:0]						i;
+	assign		signal   =     (!S_A && !S_B && S_C) || (!S_A && S_B && !S_C) || (S_A && S_B && S_C) || (S_A && !S_B && !S_C);
+	assign		signal_h =     (!S_A_H && !S_B_H && S_C_H) || (!S_A_H && S_B_H && !S_C_H) || (S_A_H && S_B_H && S_C_H) || (S_A_H && !S_B_H && !S_C_H);
+	assign			T			=			op_0 ^ op_1;
+	assign			G			=			op_0 & op_1;
+	assign			Z			=			~(op0 | op_1);
+	/*前导零编码*/
+	always@(*)begin
+		if(cont == 3'b000)begin
+			for(i = 6'b1; i < 6'd49; i = i + 1'd1)begin
+				F[i] =  (T[i + 'b1] & ((G[i] & (~(Z[i - 'b1]))) | (Z[i] & (~(G[i - 'b1]))))) | (~T[i + 'b1] & ((Z[i] & (~Z[i - 'b1])) | (G[i] & (~G[i - 'b1]))));
+			end
+			F[0] = (T[1] & (G[0] & signal)) | (~T[1] & ((z[0] & signal) | G[0]));
+			F[49] = (signal & (G[49] & (~Z[48])) | Z[49] & (~G[48])) | (~signal & (Z[49] & (~Z[48]) | (~Z[49])));
+			F[55:50] = 6'b0;
+		end else if(cont == 3'b001) begin
+			/*处理高位*/
+			for(i = 6'd33; i < 6'd55; i = i + 1'd1)begin
+				F[i] =  (T[i + 'b1] & ((G[i] & (~(Z[i - 'b1]))) | (Z[i] & (~(G[i - 'b1]))))) | (~T[i + 'b1] & ((Z[i] & (~Z[i - 'b1])) | (G[i] & (~G[i - 'b1]))));
+			end
+			F[32] = (T[33] & (G[32] & signal_h)) | (~T[33] & ((z[32] & signal_h) | G[32]));
+			F[55] = (signal_h & (G[55] & (~Z[54])) | Z[55] & (~G[54])) | (~signal_h & (Z[55] & (~Z[54]) | (~Z[55])));
+			F[31:24] = 8'b0;
+			/*处理低位*/
+			for(i = 6'd1; i < 6'd22; i = i + 1'd1)begin
+				F[i] =  (T[i + 'b1] & ((G[i] & (~(Z[i - 'b1]))) | (Z[i] & (~(G[i - 'b1]))))) | (~T[i + 'b1] & ((Z[i] & (~Z[i - 'b1])) | (G[i] & (~G[i - 'b1]))));
+			end
+			F[0] = (T[1] & (G[0] & signal)) | (~T[1] & ((z[0] & signal) | G[0]));
+			F[23] = (signal & (G[23] & (~Z[22])) | Z[23] & (~G[22])) | (~signal & (Z[23] & (~Z[22]) | (~Z[23])));
+		end else if(cont == 3'b010)begin
+			F[32:24] = 9'b0;
+			F[55:33] = 23'b0;
+			/*处理低位*/
+			for(i = 6'd1; i < 6'd22; i = i + 1'd1)begin
+				F[i] =  (T[i + 'b1] & ((G[i] & (~(Z[i - 'b1]))) | (Z[i] & (~(G[i - 'b1]))))) | (~T[i + 'b1] & ((Z[i] & (~Z[i - 'b1])) | (G[i] & (~G[i - 'b1]))));
+			end
+			F[0] = (T[1] & (G[0] & signal)) | (~T[1] & ((z[0] & signal) | G[0]));
+			F[23] = (signal & (G[23] & (~Z[22])) | Z[23] & (~G[22])) | (~signal & (Z[23] & (~Z[22]) | (~Z[23])));
+		end
+	end
+	/*并行纠错编码*/
+	always@(*)begin
+		for(i = 6'b0; i <= 6'b54; i = i + 1'b1)begin//没有最高位
+			GP_p[i] = G[i];
+			GP_n[i] = T[i + 1] & Z[i];
+			GP_z[i] = ~(G[i] | (T[i + 1] & Z[i]));
+			GN_p[i] = Z[i];
+			GN_n[i] = T[i + 1] & G[i];
+			GN_z[i] = ~(Z[i] | (T[i + 1] & G[i])); 
+		end
+	end
+endmodule

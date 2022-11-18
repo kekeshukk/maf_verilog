@@ -1,0 +1,7 @@
+module T5_stage(
+	input										clk,
+	input										rstn,
+	input			[2:0]						cont,
+	input			[9:0]						P,
+);
+endmodule

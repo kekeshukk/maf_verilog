@@ -1,0 +1,8 @@
+module Vari_shift(
+	input			[2:0]						cont,
+	input			[9:0]						P,
+	input			[1:0]						V,
+	
+);
+
+endmodule

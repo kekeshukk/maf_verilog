@@ -1,0 +1,27 @@
+module T2_stage(
+	input										clk,
+	input										rstn,
+	input 		reg		[22:0]		M_A,
+	input 		reg		[22:0]		M_B,
+	input 		reg  		[22:0]		M_C,
+	input 		reg		[3:0]			trap_0,//模式1模式2或者模式3
+	input 		reg		[3:0]			trap_1,//模式2
+	input 		reg		[7:0]			E_A,
+	input 		reg		[7:0]			E_B,
+	input 		reg		[7:0]			E_C,
+	input 		reg	         		S_A,
+	input 		reg						S_B,
+	input 		reg						S_C,
+	input 		reg		[2:0]		   con_state,
+	input 		reg		[2:0]			trap_ans_0,
+	input			reg		[2:0] 	   trap_ans_1,
+	/*
+		输出
+	*/
+	output 		reg		[2:0]			trap_ans_T2_0,
+	output 		reg		[2:0]			trap_ans_T2_1,
+	output		reg		[3:0]			trap_T2_0,
+	output		reg		[3:0]			trap_T2_1
+);
+
+endmodule

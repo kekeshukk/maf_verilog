@@ -1,0 +1,10 @@
+module transformer(
+	input			[22:0]							M_A,
+	input			[22:0]							M_B,
+	input			[22:0]							M_C,
+	input			[13:0]							E_A,
+	input			[13:0]							E_B,
+	input			[13:0]							E_C,
+);
+
+endmodule

@@ -1,0 +1,12 @@
+//尾数结果
+module Cal(
+	input			[25:0]					M_C,
+	input			[48:0]					M_AB,
+	input										cin,
+	input			[2:0]						cont,
+	output	reg[74:0]					pos_reg
+);
+	always@(*)begin
+		
+	end
+endmodule

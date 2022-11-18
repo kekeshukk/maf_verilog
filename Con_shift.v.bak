@@ -1,0 +1,18 @@
+module Shift(
+	input										clk,
+	input										rstn,
+	input			[9:0]						P,
+	input			[1:0]						V,
+	input			[2:0]						cont,
+	input			[55:0]					p_reg_in,
+	output		[23:0]					M_reg_out
+)
+	reg			[55:0]					M_temp;
+	always @(posedge clk or negedge rstn)begin
+		if(cont == 3'b000)begin
+			if(V == 2'b0)begin
+				M_temp = 
+			end
+		end
+	end
+endmodule

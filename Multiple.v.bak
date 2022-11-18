@@ -1,0 +1,14 @@
+module multiple(
+	input										clk,
+	input										rstn,
+	input			[2:0]						cont,
+	input			[22:0]					M_A,
+	input			[22:0]					M_B,
+	input			[22:0]					M_C,
+	input			[9:0]						M_A_H,
+	input			[9:0]						M_B_H,
+	input			[9:0]						M_C_H,
+	output reg	[48:0]					M_OUT
+);
+	wire			
+endmodule

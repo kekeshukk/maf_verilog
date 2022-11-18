@@ -1,0 +1,9 @@
+//堆状的4-2压缩器
+module F_t_file(
+	input				[47:0]				P_1,
+	input				[47:0]				P_2,
+	output			[47:0]				Carry,
+	output			[47:0]				Sum
+);
+
+endmodule

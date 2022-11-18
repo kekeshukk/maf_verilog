@@ -1,0 +1,6 @@
+module	Wallace(
+	input				[575:0]				M_out_plain_in;
+	output			[47:0]				Rcarry,//realcarry,加了1修正过
+	output			[47:0]				Sum
+);
+endmodule
